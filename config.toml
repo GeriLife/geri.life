@@ -1,0 +1,44 @@
+baseurl = "http://geri.life"
+title = "GeriLife®"
+theme = "dimension"
+languageCode = "fi-fi"
+defaultContentLanguage = "fi"
+enableRobotsTXT = true
+disableKinds=["RSS"]
+
+[params]
+  description = 'GeriLife® is an open-source tool designed to increase wellbeing of elderly people.'
+  logo = "fa-heartbeat"
+  copyright = "2017"
+  footer = "test"
+
+[[params.social]]
+  medium = "twitter"
+  icon = "twitter"
+  link = "#"
+
+[[params.social]]
+  medium = "facebook"
+  icon = "facebook"
+  link = "#"
+
+[[params.social]]
+  medium = "instagram"
+  icon = "instagram"
+  link = "#"
+
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "#"
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+
+[languages.fi]
+languageName = "Suomi"
+weight = 2
+title = "GeriLife®"
+description = 'GeriLife® on avoimen lähdekoodin työkalu vanhusten hyvinvoinnin lisäämiseksi.'

@@ -7,7 +7,7 @@ enableRobotsTXT = true
 disableKinds=["RSS"]
 
 [params]
-  description = 'GeriLife® is an open-source tool designed to increase wellbeing of elderly people.'
+  description = 'GeriLife® is an open-source tool designed to increase wellbeing.'
   logo = "fa-heartbeat"
   copyright = "2017"
   footer = "test"
@@ -30,7 +30,7 @@ disableKinds=["RSS"]
 [[params.social]]
   medium = "github"
   icon = "github"
-  link = "#"
+  link = "https://github.com/GeriLife/wellbeing"
 
 [languages]
 [languages.en]
@@ -41,4 +41,4 @@ weight = 1
 languageName = "Suomi"
 weight = 2
 title = "GeriLife®"
-description = 'GeriLife® on avoimen lähdekoodin työkalu vanhusten hyvinvoinnin lisäämiseksi.'
+description = 'GeriLife® on avoimen lähdekoodin työkalu hyvinvoinnin lisäämiseksi.'

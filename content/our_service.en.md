@@ -6,4 +6,4 @@ weight: 1
 showInMenu: true
 ---
 
-GeriLife® is an open-source tool designed to increase wellbeing of elderly people.
+We offer full-service and support around GeriLife®, our open-source instrument for improving the wellbeing of residents in assisted living communities.

@@ -1,0 +1,34 @@
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; {{ .Site.Params.copyright }}. Design: <a href="https://html5up.net">HTML5 UP</a>. Powered by <a href="https://www.gohugo.io/">Hugo.</a></p>
+					</footer>
+
+			</div>
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/main.js"></script>
+			{{ template "_internal/google_analytics_async.html" . }}
+
+			<!-- Piwik -->
+			<script type="text/javascript">
+			  var _paq = _paq || [];
+			  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			  _paq.push(['trackPageView']);
+			  _paq.push(['enableLinkTracking']);
+			  (function() {
+			    var u="//geri.life/visitors/";
+			    _paq.push(['setTrackerUrl', u+'piwik.php']);
+			    _paq.push(['setSiteId', '2']);
+			    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			  })();
+			</script>
+			<!-- End Piwik Code -->
+
+	</body>
+</html>

@@ -33,12 +33,12 @@ disableKinds=["RSS"]
   link = "https://github.com/GeriLife/wellbeing"
 
 [languages]
-[languages.en]
-languageName = "English"
-weight = 1
-
 [languages.fi]
 languageName = "Suomi"
-weight = 2
+weight = 1
 title = "GeriLife®"
 description = 'GeriLife® on avoimen lähdekoodin työkalu hyvinvoinnin lisäämiseksi.'
+
+[languages.en]
+languageName = "English"
+weight = 2

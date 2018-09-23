@@ -6,4 +6,4 @@ weight: 1
 showInMenu: true
 ---
 
-Tarjoamme täyden palvelun ja tuen avoimen lähdekoodin  GeriLife®n käyttöön, joka kehitettiin lisäämään hyvinvointia ja elämänlaatua ikäihmisten palveluissa.
+Tarjoamme täyden palvelun ja tuen avoimen lähdekoodin  GeriLife®n käyttöön, joka kehitettiin lisäämään hyvinvointia ja elämänlaatua ikäihmisten palveluissa. GeriLife® tuo näkyväksi vanhuspalvelulain (14§) toteutumisen yksilötasolla.

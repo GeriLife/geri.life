@@ -37,7 +37,7 @@ disableKinds=["RSS"]
 languageName = "Suomi"
 weight = 1
 title = "GeriLife®"
-description = 'GeriLife® on avoimen lähdekoodin työkalu hyvinvoinnin lisäämiseksi.'
+description = 'GeriLife® on avoimen lähdekoodin työkalu ikäihmisten hyvän elämän edistämiseksi.'
 
 [languages.en]
 languageName = "English"

@@ -1,5 +1,5 @@
 ---
-title: "Yhteystiedot"
+title: "Ota yhteyttä"
 date: 2017-10-28T17:49:41+03:00
 draft: false
 showInMenu: true

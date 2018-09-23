@@ -5,7 +5,7 @@ draft: false
 showInMenu: true
 weight: 4
 ---
-<form method="POST" action="http://formspree.io/brylie@amble.fi">
+<form method="POST" action="http://formspree.io/marjo@amble.fi">
   <input name="email" placeholder="Sähköpostiosoitteesi" type="email">
   <textarea name="message" placeholder="Viestisi"></textarea>
   <button type="submit">

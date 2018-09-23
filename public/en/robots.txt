@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://geri.life/sitemap.xml

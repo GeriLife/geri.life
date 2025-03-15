@@ -1,0 +1,1 @@
+caregiver-and-senior.jpg: Photo by Andrea Piacquadio: https://www.pexels.com/photo/joyful-adult-daughter-greeting-happy-surprised-senior-mother-in-garden-3768131/

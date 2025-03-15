@@ -3,5 +3,229 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>Welcome to GeriLife</h1>
+	<nav class="container mx-auto py-4 px-4 flex justify-between items-center">
+		<div class="flex items-center">
+			<img src="/logo.svg" alt="GeriLife Logo" class="h-10 mr-3"/>
+			<span class="text-2xl font-serif text-primary font-bold">GeriLife</span>
+		</div>
+		<div class="hidden md:flex space-x-6">
+			<a href="#mission" class="hover:text-primary transition-colors">Our Mission</a>
+			<a href="#features" class="hover:text-primary transition-colors">Features</a>
+			<a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+			<a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+		</div>
+		<button class="btn btn-primary">Request Demo</button>
+	</nav>
+
+	<header class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative">
+		<img src="/hero-image.jpg" alt="Caregiver and senior using GeriLife" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay z-0" />
+		<div class="container mx-auto py-20 px-4 text-center relative z-10">
+			<h1 class="text-5xl md:text-6xl font-serif font-bold mb-4">Enhancing Elder Care Through Meaningful Connection</h1>
+			<p class="text-xl md:text-2xl italic mb-8 max-w-2xl mx-auto">Software that helps caregivers track, measure, and improve quality of life for seniors</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<button class="btn btn-accent btn-lg">See How It Works</button>
+				<button class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg">Schedule Demo</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="py-12 bg-base-100">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col md:flex-row gap-8 items-center">
+				<div class="md:w-1/2">
+					<h2 class="text-3xl font-serif font-bold mb-4">Measure What Matters: Quality of Life</h2>
+					<p class="text-lg mb-6">GeriLife transforms elder care by giving caregivers a simple way to track meaningful activities, measure wellbeing outcomes, and ensure every resident enjoys personalized engagement.</p>
+					<ul class="space-y-3">
+						<li class="flex items-start">
+							<svg class="h-6 w-6 text-accent mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span>Increase resident satisfaction through personalized care</span>
+						</li>
+						<li class="flex items-start">
+							<svg class="h-6 w-6 text-accent mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span>Save staff time on documentation and reporting</span>
+						</li>
+						<li class="flex items-start">
+							<svg class="h-6 w-6 text-accent mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span>Provide families with transparent insights into loved ones' care</span>
+						</li>
+					</ul>
+				</div>
+				<div class="md:w-1/2">
+					<img src="/dashboard-preview.png" alt="GeriLife Dashboard" class="rounded-lg shadow-xl" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="features" class="py-16 bg-base-200">
+		<div class="container mx-auto px-4">
+			<h2 class="text-4xl font-serif font-bold text-center mb-4">Compassionate Care Made Measurable</h2>
+			<p class="text-lg text-center mb-12 max-w-3xl mx-auto">Our platform transforms daily interactions into meaningful data, helping you deliver exceptional person-centered care.</p>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+					<figure class="px-6 pt-6">
+						<img src="/icons/activities-icon.svg" alt="Activities Icon" class="h-16 w-16" />
+					</figure>
+					<div class="card-body">
+						<h3 class="card-title text-xl font-serif">Activity Tracking</h3>
+						<p>Easily log meaningful activities for each resident, from social events to one-on-one interactions, creating a complete picture of engagement.</p>
+						<p class="text-sm italic mt-2">"The activity tracking has helped us ensure no resident is overlooked." - Care Director</p>
+					</div>
+				</div>
+				
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+					<figure class="px-6 pt-6">
+						<img src="/icons/insights-icon.svg" alt="Insights Icon" class="h-16 w-16" />
+					</figure>
+					<div class="card-body">
+						<h3 class="card-title text-xl font-serif">Wellbeing Analytics</h3>
+						<p>Transform activity data into actionable insights with our wellbeing dashboard, highlighting trends and areas for improved engagement.</p>
+						<p class="text-sm italic mt-2">"The analytics helped us identify which activities truly resonate with our residents." - Activity Coordinator</p>
+					</div>
+				</div>
+				
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+					<figure class="px-6 pt-6">
+						<img src="/icons/family-icon.svg" alt="Family Icon" class="h-16 w-16" />
+					</figure>
+					<div class="card-body">
+						<h3 class="card-title text-xl font-serif">Family Connection</h3>
+						<p>Keep families informed and involved with shareable reports and updates about their loved one's activities and wellbeing progress.</p>
+						<p class="text-sm italic mt-2">"Families appreciate the transparency and feel more connected to their loved ones' daily lives." - Family Liaison</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="testimonials" class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
+		<div class="container mx-auto px-4">
+			<h2 class="text-4xl font-serif font-bold text-center mb-12">Trusted by Leading Care Providers</h2>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="card bg-white shadow-lg">
+					<div class="card-body">
+						<div class="flex items-center mb-4">
+							<div class="avatar">
+								<div class="w-12 h-12 rounded-full">
+									<img src="/testimonials/maria.jpg" alt="Maria Johnson" />
+								</div>
+							</div>
+							<div class="ml-4">
+								<h3 class="font-bold">Maria Johnson</h3>
+								<p class="text-sm text-gray-600">Director of Care, Sunset Gardens</p>
+							</div>
+						</div>
+						<div class="flex mb-3">
+							<svg class="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+								<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+							</svg>
+							<!-- Repeat star icon 4 more times -->
+						</div>
+						<p class="italic">"GeriLife has transformed how we approach resident engagement. We've seen significant improvements in resident satisfaction and family communication since implementing the platform."</p>
+					</div>
+				</div>
+				
+				<!-- Add 2 more testimonial cards with the same structure -->
+			</div>
+			
+			<div class="flex flex-wrap justify-center items-center mt-16 gap-8 md:gap-16">
+				<img src="/logos/carehome1.svg" alt="Care Home Logo" class="h-12 opacity-70 hover:opacity-100 transition-opacity" />
+				<img src="/logos/carehome2.svg" alt="Care Home Logo" class="h-12 opacity-70 hover:opacity-100 transition-opacity" />
+				<img src="/logos/carehome3.svg" alt="Care Home Logo" class="h-12 opacity-70 hover:opacity-100 transition-opacity" />
+				<img src="/logos/carehome4.svg" alt="Care Home Logo" class="h-12 opacity-70 hover:opacity-100 transition-opacity" />
+			</div>
+		</div>
+	</section>
+
+	<section class="relative py-20 overflow-hidden">
+		<div class="absolute inset-0 bg-primary/90 z-0"></div>
+		<img src="/patterns/dots.svg" alt="" class="absolute right-0 top-0 h-full opacity-10 z-0" />
+		<div class="container mx-auto px-4 relative z-10">
+			<div class="max-w-2xl mx-auto text-center text-white">
+				<h2 class="text-4xl font-serif font-bold mb-4">Start Improving Elder Care Today</h2>
+				<p class="text-lg mb-8">
+					GeriLife is easy to implement, with no complicated setup. Our cloud-based platform works on any device, and our team provides full onboarding support to get you started quickly.
+				</p>
+				<div class="flex flex-col sm:flex-row justify-center gap-4">
+					<button class="btn btn-accent btn-lg">Schedule a Demo</button>
+					<button class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg">View Pricing Plans</button>
+				</div>
+				<p class="mt-6 text-sm opacity-90">No credit card required • Free 30-day trial • Cancel anytime</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="bg-neutral text-neutral-content py-12">
+		<div class="container mx-auto px-4">
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+				<div>
+					<div class="flex items-center mb-4">
+						<img src="/logo-white.svg" alt="GeriLife Logo" class="h-8 mr-2"/>
+						<span class="text-xl font-serif font-bold">GeriLife</span>
+					</div>
+					<p class="mb-4">Enhancing elder care through meaningful connection and data-driven insights.</p>
+					<div class="flex space-x-4">
+						<a href="#" aria-label="Facebook"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
+						<a href="#" aria-label="Twitter"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
+						<a href="#" aria-label="LinkedIn"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
+					</div>
+				</div>
+				
+				<div>
+					<h3 class="text-lg font-bold mb-4">Platform</h3>
+					<ul class="space-y-2">
+						<li><a href="#" class="hover:text-accent transition-colors">Features</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Pricing</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Case Studies</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Resources</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h3 class="text-lg font-bold mb-4">Company</h3>
+					<ul class="space-y-2">
+						<li><a href="#" class="hover:text-accent transition-colors">About Us</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Blog</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Careers</a></li>
+						<li><a href="#" class="hover:text-accent transition-colors">Contact</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h3 class="text-lg font-bold mb-4">Contact Us</h3>
+					<ul class="space-y-2">
+						<li class="flex items-start">
+							<svg class="h-5 w-5 mt-0.5 mr-2"><!-- Email icon --></svg>
+							<span>hello@gerilife.com</span>
+						</li>
+						<li class="flex items-start">
+							<svg class="h-5 w-5 mt-0.5 mr-2"><!-- Phone icon --></svg>
+							<span>+1 (555) 123-4567</span>
+						</li>
+						<li class="flex items-start">
+							<svg class="h-5 w-5 mt-0.5 mr-2"><!-- Location icon --></svg>
+							<span>123 Care Street, Suite 100<br/>San Francisco, CA 94103</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="border-t border-neutral-content/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+				<p>© {new Date().getFullYear()} GeriLife. All rights reserved.</p>
+				<div class="flex space-x-6 mt-4 md:mt-0">
+					<a href="#" class="text-sm hover:text-accent transition-colors">Privacy Policy</a>
+					<a href="#" class="text-sm hover:text-accent transition-colors">Terms of Service</a>
+					<a href="#" class="text-sm hover:text-accent transition-colors">Accessibility</a>
+				</div>
+			</div>
+		</div>
+	</footer>
 </Layout>

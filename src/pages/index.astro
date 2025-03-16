@@ -2,58 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 ---
-
 <Layout>
-	<!-- Navigation -->
-	<nav class="container mx-auto py-4 px-4 flex justify-between items-center">
-		<!-- Logo and Brand Name -->
-		<div class="flex items-center">
-			<img src="/src/assets/images/gerilife.png" alt="GeriLife Logo" class="h-10 mr-3"/>
-			<span class="text-2xl font-serif text-primary font-bold">GeriLife</span>
-		</div>
-
-		<!-- Desktop Navigation Links -->
-		<div class="hidden md:flex space-x-6">
-			<a href="#mission" class="hover:text-primary transition-colors">Our Mission</a>
-			<a href="#features" class="hover:text-primary transition-colors">Features</a>
-			<a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
-			<a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-		</div>
-
-		<!-- CTA Button (visible on both mobile and desktop) -->
-		<div class="hidden md:block">
-			<button class="btn btn-primary">Request Demo</button>
-		</div>
-
-		<!-- Mobile Menu Button -->
-		<div class="md:hidden flex items-center">
-			<button id="mobile-menu-button" class="p-2" aria-label="Open menu">
-				<Icon name="material-symbols:menu" class="h-6 w-6" />
-			</button>
-		</div>
-
-		<!-- Mobile Menu (hidden by default) -->
-		<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 p-4">
-			<div class="flex justify-between items-center mb-6">
-				<div class="flex items-center">
-					<img src="/src/assets/images/gerilife.png" alt="GeriLife Logo" class="h-8 mr-2"/>
-					<span class="text-xl font-serif text-primary font-bold">GeriLife</span>
-				</div>
-				<button id="close-menu-button" class="p-2" aria-label="Close menu">
-					<Icon name="material-symbols:close" class="h-6 w-6" />
-				</button>
-			</div>
-			
-			<div class="flex flex-col space-y-4">
-				<a href="#mission" class="py-2 hover:text-primary transition-colors">Our Mission</a>
-				<a href="#features" class="py-2 hover:text-primary transition-colors">Features</a>
-				<a href="#testimonials" class="py-2 hover:text-primary transition-colors">Testimonials</a>
-				<a href="#contact" class="py-2 hover:text-primary transition-colors">Contact</a>
-				<button class="btn btn-primary mt-4 w-full">Request Demo</button>
-			</div>
-		</div>
-	</nav>
-
 	<!-- Hero Section -->
 	<header class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative">
 		<img src="/src/assets/images/caregiver-and-senior.jpg" alt="Caregiver and senior using GeriLife" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay z-0" />
@@ -106,7 +55,6 @@ import { Icon } from 'astro-icon/components';
 			</div>
 		</div>
 	</section>
-
 
 	<!-- Value Proposition -->
 	<section class="py-12 bg-base-100">
@@ -233,11 +181,6 @@ import { Icon } from 'astro-icon/components';
 				<div class="card bg-white shadow-lg">
 					<div class="card-body">
 						<div class="flex items-center mb-4">
-							<!-- <div class="avatar">
-								<div class="w-12 h-12 rounded-full">
-									<img src="/testimonials/maria.jpg" alt="Maria Johnson" />
-								</div>
-							</div> -->
 							<div class="ml-4">
 								<h3 class="font-bold">Maria Johnson</h3>
 								<p class="text-sm text-gray-600">Director of Care, Sunset Gardens</p>
@@ -253,7 +196,6 @@ import { Icon } from 'astro-icon/components';
 					</div>
 				</div>
 				
-				<!-- Add to Testimonials Section -->
 				<div class="card bg-white shadow-lg">
 					<div class="card-body">
 						<div class="flex items-center mb-4">
@@ -272,7 +214,6 @@ import { Icon } from 'astro-icon/components';
 						<p class="italic">"As someone caring for multiple residents, GeriLife has been a lifesaver. I no longer worry about mixing up preferences or forgetting important details. My clients are happier and their families have noticed the difference."</p>
 					</div>
 				</div>
-
 				<div class="card bg-white shadow-lg">
 					<div class="card-body">
 						<div class="flex items-center mb-4">
@@ -294,8 +235,8 @@ import { Icon } from 'astro-icon/components';
 			</div>
 			
 			<div class="flex flex-wrap justify-center items-center mt-16 gap-8 md:gap-16">
-				<img src="src/assets/images/logos/tampere.svg" alt="Kontukoti logo" class="h-24 opacity-70 hover:opacity-100 transition-opacity" />
-				<img src="src/assets/images/logos/kontukoti.webp" alt="Kontukoti logo" class="h-24 opacity-70 hover:opacity-100 transition-opacity" />
+				<img src="/src/assets/images/logos/tampere.svg" alt="Tampere logo" class="h-24 opacity-70 hover:opacity-100 transition-opacity" />
+				<img src="/src/assets/images/logos/kontukoti.webp" alt="Kontukoti logo" class="h-24 opacity-70 hover:opacity-100 transition-opacity" />
 			</div>
 		</div>
 	</section>
@@ -312,104 +253,10 @@ import { Icon } from 'astro-icon/components';
 				</p>
 				<div class="flex flex-col sm:flex-row justify-center gap-4">
 					<button class="btn btn-accent btn-lg">Schedule a Demo</button>
-					<button class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg">View Pricing Plans</button>
+					<a href="/pricing" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg">View Pricing Plans</a>
 				</div>
 				<p class="mt-6 text-sm opacity-90">No credit card required • Free 30-day trial • Cancel anytime</p>
 			</div>
 		</div>
 	</section>
-
-	<!-- Footer -->
-	<footer class="bg-neutral text-neutral-content py-12">
-		<div class="container mx-auto px-4">
-			<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-				<div>
-					<div class="flex items-center mb-4">
-						<img src="/src/assets/images/gerilife.png" alt="GeriLife Logo" class="h-8 mr-2"/>
-						<span class="text-xl font-serif font-bold">GeriLife</span>
-					</div>
-					<p class="mb-4">Enhancing elder care through meaningful connection and data-driven insights.</p>
-					<div class="flex space-x-4">
-						<a href="#" aria-label="Facebook"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
-						<a href="#" aria-label="Twitter"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
-						<a href="#" aria-label="LinkedIn"><svg class="h-5 w-5 fill-current"><!-- SVG content --></svg></a>
-					</div>
-				</div>
-				
-				<div>
-					<h3 class="text-lg font-bold mb-4">Platform</h3>
-					<ul class="space-y-2">
-						<li><a href="#" class="hover:text-accent transition-colors">Features</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Pricing</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Case Studies</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Resources</a></li>
-					</ul>
-				</div>
-				
-				<div>
-					<h3 class="text-lg font-bold mb-4">Company</h3>
-					<ul class="space-y-2">
-						<li><a href="#" class="hover:text-accent transition-colors">About Us</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Blog</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Careers</a></li>
-						<li><a href="#" class="hover:text-accent transition-colors">Contact</a></li>
-					</ul>
-				</div>
-				
-				<div>
-					<h3 class="text-lg font-bold mb-4">Contact Us</h3>
-					<ul class="space-y-2">
-						<li class="flex items-start">
-							<Icon name="material-symbols:alternate-email" class="h-5 w-5 mt-0.5 mr-2" />
-							<span>hello@geri.life</span>
-						</li>
-						<li class="flex items-start">
-							<svg class="h-5 w-5 mt-0.5 mr-2"><!-- Location icon --></svg>
-							<span>Made in Finland</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="border-t border-neutral-content/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-				<p>© {new Date().getFullYear()} GeriLife. All rights reserved.</p>
-				<div class="flex space-x-6 mt-4 md:mt-0">
-					<a href="#" class="text-sm hover:text-accent transition-colors">Privacy Policy</a>
-					<a href="#" class="text-sm hover:text-accent transition-colors">Terms of Service</a>
-					<a href="#" class="text-sm hover:text-accent transition-colors">Accessibility</a>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-	<script>
-		// Mobile menu functionality
-		document.addEventListener('DOMContentLoaded', () => {
-			const mobileMenuButton = document.getElementById('mobile-menu-button');
-			const closeMenuButton = document.getElementById('close-menu-button');
-			const mobileMenu = document.getElementById('mobile-menu');
-			const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-			// Open mobile menu
-			mobileMenuButton.addEventListener('click', () => {
-				mobileMenu.classList.remove('hidden');
-				document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-			});
-
-			// Close mobile menu
-			closeMenuButton.addEventListener('click', () => {
-				mobileMenu.classList.add('hidden');
-				document.body.style.overflow = ''; // Restore scrolling
-			});
-
-			// Close menu when a link is clicked
-			mobileMenuLinks.forEach(link => {
-				link.addEventListener('click', () => {
-					mobileMenu.classList.add('hidden');
-					document.body.style.overflow = '';
-				});
-			});
-		});
-	</script>
 </Layout>

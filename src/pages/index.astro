@@ -6,17 +6,52 @@ import { Icon } from 'astro-icon/components'
 <Layout>
 	<!-- Navigation -->
 	<nav class="container mx-auto py-4 px-4 flex justify-between items-center">
+		<!-- Logo and Brand Name -->
 		<div class="flex items-center">
 			<img src="/src/assets/images/gerilife.png" alt="GeriLife Logo" class="h-10 mr-3"/>
 			<span class="text-2xl font-serif text-primary font-bold">GeriLife</span>
 		</div>
+
+		<!-- Desktop Navigation Links -->
 		<div class="hidden md:flex space-x-6">
 			<a href="#mission" class="hover:text-primary transition-colors">Our Mission</a>
 			<a href="#features" class="hover:text-primary transition-colors">Features</a>
 			<a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
 			<a href="#contact" class="hover:text-primary transition-colors">Contact</a>
 		</div>
-		<button class="btn btn-primary">Request Demo</button>
+
+		<!-- CTA Button (visible on both mobile and desktop) -->
+		<div class="hidden md:block">
+			<button class="btn btn-primary">Request Demo</button>
+		</div>
+
+		<!-- Mobile Menu Button -->
+		<div class="md:hidden flex items-center">
+			<button id="mobile-menu-button" class="p-2" aria-label="Open menu">
+				<Icon name="material-symbols:menu" class="h-6 w-6" />
+			</button>
+		</div>
+
+		<!-- Mobile Menu (hidden by default) -->
+		<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 p-4">
+			<div class="flex justify-between items-center mb-6">
+				<div class="flex items-center">
+					<img src="/src/assets/images/gerilife.png" alt="GeriLife Logo" class="h-8 mr-2"/>
+					<span class="text-xl font-serif text-primary font-bold">GeriLife</span>
+				</div>
+				<button id="close-menu-button" class="p-2" aria-label="Close menu">
+					<Icon name="material-symbols:close" class="h-6 w-6" />
+				</button>
+			</div>
+			
+			<div class="flex flex-col space-y-4">
+				<a href="#mission" class="py-2 hover:text-primary transition-colors">Our Mission</a>
+				<a href="#features" class="py-2 hover:text-primary transition-colors">Features</a>
+				<a href="#testimonials" class="py-2 hover:text-primary transition-colors">Testimonials</a>
+				<a href="#contact" class="py-2 hover:text-primary transition-colors">Contact</a>
+				<button class="btn btn-primary mt-4 w-full">Request Demo</button>
+			</div>
+		</div>
 	</nav>
 
 	<!-- Hero Section -->
@@ -346,4 +381,35 @@ import { Icon } from 'astro-icon/components'
 			</div>
 		</div>
 	</footer>
+
+
+	<script>
+		// Mobile menu functionality
+		document.addEventListener('DOMContentLoaded', () => {
+			const mobileMenuButton = document.getElementById('mobile-menu-button');
+			const closeMenuButton = document.getElementById('close-menu-button');
+			const mobileMenu = document.getElementById('mobile-menu');
+			const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+			// Open mobile menu
+			mobileMenuButton.addEventListener('click', () => {
+				mobileMenu.classList.remove('hidden');
+				document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+			});
+
+			// Close mobile menu
+			closeMenuButton.addEventListener('click', () => {
+				mobileMenu.classList.add('hidden');
+				document.body.style.overflow = ''; // Restore scrolling
+			});
+
+			// Close menu when a link is clicked
+			mobileMenuLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenu.classList.add('hidden');
+					document.body.style.overflow = '';
+				});
+			});
+		});
+	</script>
 </Layout>

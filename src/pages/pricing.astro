@@ -384,18 +384,23 @@ import Layout from '../layouts/Layout.astro';
         <!-- JavaScript for calculator functionality -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const residentSlider = document.getElementById('resident-count');
+                const residentSlider = document.getElementById('resident-count') as HTMLInputElement;
                 const residentDisplay = document.getElementById('resident-display');
                 const residentFee = document.getElementById('resident-fee');
                 const platformFee = document.getElementById('platform-fee');
                 const supportFee = document.getElementById('support-fee');
                 const totalCost = document.getElementById('total-cost');
-                const supportOptions = document.querySelectorAll('input[name="support-package"]');
-                
+                const supportOptions = document.querySelectorAll<HTMLInputElement>('input[name="support-package"]');
+
                 function updatePricing() {
+                    if (!residentSlider || !residentDisplay || !residentFee || !platformFee || !supportFee || !totalCost) {
+                        console.error('One or more pricing calculator elements not found');
+                        return;
+                    }
+                    
                     // Get resident count
                     const residents = parseInt(residentSlider.value);
-                    residentDisplay.textContent = residents;
+                    residentDisplay.textContent = residents.toString();
                     
                     // Calculate resident fee
                     const residentCost = residents * 1; // €1 per resident
@@ -429,14 +434,17 @@ import Layout from '../layouts/Layout.astro';
                     totalCost.textContent = `€${totalPrice}`;
                 }
                 
-                // Add event listeners
-                residentSlider.addEventListener('input', updatePricing);
-                for (const option of supportOptions) {
-                    option.addEventListener('change', updatePricing);
+                // Only add event listeners if all elements exist
+                if (residentSlider && supportOptions) {
+                    // Add event listeners
+                    residentSlider.addEventListener('input', updatePricing);
+                    for (const option of supportOptions) {
+                        option.addEventListener('change', updatePricing);
+                    }
+                    
+                    // Initialize with default values
+                    updatePricing();
                 }
-                
-                // Initialize with default values
-                updatePricing();
             });
         </script>
     </section>

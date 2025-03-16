@@ -1,0 +1,209 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <section id="pricing" class="py-16 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-lg max-w-3xl mx-auto">Choose the plan that fits your facility's needs, with no hidden fees or complicated pricing structure.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card bg-white shadow-xl hover:shadow-2xl transition-all border-t-4 border-primary/50">
+                    <div class="card-body">
+                        <h3 class="text-2xl font-serif font-bold text-center mb-2">Starter</h3>
+                        <p class="text-center text-gray-600 mb-6">Perfect for smaller care homes</p>
+                        
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">$199</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        
+                        <p class="text-center font-medium text-primary mb-6">Up to 25 residents</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>All core features included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Activity tracking & analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>3 admin users included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Basic reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary btn-block">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan (Most Popular) -->
+                <div class="card bg-white shadow-xl hover:shadow-2xl transition-all border-t-4 border-primary relative mt-0 md:-mt-4">
+                    <div class="absolute -top-4 inset-x-0 mx-auto w-max px-4 py-1 bg-primary text-white text-sm font-medium rounded-full">
+                        Most Popular
+                    </div>
+                    
+                    <div class="card-body">
+                        <h3 class="text-2xl font-serif font-bold text-center mb-2">Professional</h3>
+                        <p class="text-center text-gray-600 mb-6">Ideal for medium-sized facilities</p>
+                        
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">$499</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        
+                        <p class="text-center font-medium text-primary mb-6">Up to 100 residents</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Everything in Starter, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Advanced analytics dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>10 admin users included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Family portal access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Priority email & phone support</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary btn-block">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="card bg-white shadow-xl hover:shadow-2xl transition-all border-t-4 border-primary/50">
+                    <div class="card-body">
+                        <h3 class="text-2xl font-serif font-bold text-center mb-2">Enterprise</h3>
+                        <p class="text-center text-gray-600 mb-6">For larger care organizations</p>
+                        
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">$999</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        
+                        <p class="text-center font-medium text-primary mb-6">Up to 250 residents</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Everything in Professional, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Custom reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Unlimited admin users</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>API access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary btn-block">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Plan -->
+            <div class="mt-12 max-w-3xl mx-auto">
+                <div class="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-xl">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold mb-2">Need a custom solution?</h3>
+                                <p>For facilities with 250+ residents or specialized requirements</p>
+                            </div>
+                            <button class="btn btn-primary">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQs -->
+            <div class="mt-16 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-serif font-bold text-center mb-8">Frequently Asked Questions</h3>
+                
+                <div class="space-y-4">
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="pricing-faq" checked="checked" /> 
+                        <div class="collapse-title text-lg font-medium">
+                            How do I know which plan is right for my facility?
+                        </div>
+                        <div class="collapse-content"> 
+                            <p>Choose the plan that accommodates your current resident count. If you're close to a tier boundary, consider your growth plans for the next 6-12 months. You can always upgrade as your needs change.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="pricing-faq" /> 
+                        <div class="collapse-title text-lg font-medium">
+                            Can I change plans if my resident count changes?
+                        </div>
+                        <div class="collapse-content"> 
+                            <p>Yes! You can upgrade or downgrade your plan at any time. When upgrading, the new price will be prorated for the remainder of your billing period. When downgrading, changes take effect at your next billing cycle.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="pricing-faq" /> 
+                        <div class="collapse-title text-lg font-medium">
+                            Is there a setup fee or long-term contract?
+                        </div>
+                        <div class="collapse-content"> 
+                            <p>No setup fees! Our plans are month-to-month, though you can save 15% by paying annually. We believe in earning your business every month with exceptional service and continuous product improvements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="pricing-faq" /> 
+                        <div class="collapse-title text-lg font-medium">
+                            What happens if we exceed our resident limit?
+                        </div>
+                        <div class="collapse-content"> 
+                            <p>We'll notify you when you reach 80% of your plan's resident limit. If you exceed your limit, we'll automatically upgrade you to the next tier at the start of your next billing cycle. You're welcome to add a few residents above your plan limit for up to 30 days during transition periods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+</Layout>

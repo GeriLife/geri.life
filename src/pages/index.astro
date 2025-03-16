@@ -34,6 +34,43 @@ import { Icon } from 'astro-icon/components'
 	</header>
 
 	<!-- Mission Section -->
+	<section id="mission" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
+		<div class="container mx-auto px-4">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl font-serif font-bold mb-4">Our Mission</h2>
+					<div class="w-16 h-1 bg-accent mx-auto"></div>
+				</div>
+				
+				<div class="flex flex-col md:flex-row gap-12">
+					<div class="md:w-1/2">
+						<div class="card bg-white shadow-lg h-full">
+							<div class="card-body">
+								<h3 class="text-2xl font-serif font-bold mb-4">Mission</h3>
+								<p class="text-lg">The seasoned residents of our society deserve the chance to keep that pep in their step. We want to make that possible through personal interactions, organized activities, and customized routines that fit the life they want to lead.</p>
+								<div class="mt-6">
+									<p class="font-medium italic text-primary">"Every encounter is meaningful"</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="md:w-1/2">
+						<div class="card bg-white shadow-lg h-full">
+							<div class="card-body">
+								<h3 class="text-2xl font-serif font-bold mb-4">Vision</h3>
+								<p class="text-lg">We hope that GeriLife can provide caregivers with the tools they need to create an exciting life for their residents through compassionate and genuine care. No more resigning to a life of repetitive routines—we want people to continue living a full life while maintaining proper care for their health needs.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="mt-12 text-center">
+					<p class="text-lg max-w-3xl mx-auto">GeriLife is committed to improving elderly care by making each resident's unique habits clear and visible to their providers, while helping caregivers communicate with families that they are fulfilling the promise to care for their loved ones.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 	<!-- Value Proposition -->
@@ -49,8 +86,8 @@ import { Icon } from 'astro-icon/components'
 							<span>Increase resident satisfaction through personalized care</span>
 						</li>
 						<li class="flex items-start">
-							 <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
-							<span>Save staff time on documentation and reporting</span>
+							<Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+							<span>Save caregivers countless hours on documentation and scheduling</span>
 						</li>
 						<li class="flex items-start">
 							 <Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
@@ -119,6 +156,39 @@ import { Icon } from 'astro-icon/components'
 		</div>
 	</section>
 
+	<!-- Personalization -->
+	<section class="py-16 bg-base-100">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col md:flex-row items-center gap-12">
+				<div class="md:w-1/2">
+					<img src="/src/assets/images/playing-dominoes.jpg" alt="Caregiver with senior resident" class="rounded-lg shadow-xl" />
+				</div>
+				<div class="md:w-1/2">
+					<h2 class="text-3xl font-serif font-bold mb-4">We Find That <span class="italic text-primary">'Personal Touch'</span></h2>
+					<p class="text-lg mb-6">Through the use of our technology, we bring a genuine touch back into caregiving. For every elderly resident feeling lost in a sea of others in need, we empower caregivers with the ability to know the details of every person in their care.</p>
+					
+					<div class="bg-base-200 p-6 rounded-lg shadow-inner">
+						<h3 class="text-xl font-medium mb-3">GeriLife helps you:</h3>
+						<ul class="space-y-3">
+							<li class="flex items-start">
+								<Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+								<span>Organize detailed notes for each resident</span>
+							</li>
+							<li class="flex items-start">
+								<Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+								<span>Schedule personalized activities that residents love</span>
+							</li>
+							<li class="flex items-start">
+								<Icon name="material-symbols:check-circle-outline" class="h-6 w-6 text-accent mt-0.5 mr-2" />
+								<span>Track individual preferences and special needs</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Social Proof & Testimonials -->
 	<section id="testimonials" class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
 		<div class="container mx-auto px-4">
@@ -148,7 +218,44 @@ import { Icon } from 'astro-icon/components'
 					</div>
 				</div>
 				
-				<!-- Add 2 more testimonial cards with the same structure -->
+				<!-- Add to Testimonials Section -->
+				<div class="card bg-white shadow-lg">
+					<div class="card-body">
+						<div class="flex items-center mb-4">
+							<div class="ml-4">
+								<h3 class="font-bold">Eleanor Martinez</h3>
+								<p class="text-sm text-gray-600">Personal At-Home Caregiver</p>
+							</div>
+						</div>
+						<div class="flex mb-3">
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+						</div>
+						<p class="italic">"As someone caring for multiple residents, GeriLife has been a lifesaver. I no longer worry about mixing up preferences or forgetting important details. My clients are happier and their families have noticed the difference."</p>
+					</div>
+				</div>
+
+				<div class="card bg-white shadow-lg">
+					<div class="card-body">
+						<div class="flex items-center mb-4">
+							<div class="ml-4">
+								<h3 class="font-bold">James Wilson</h3>
+								<p class="text-sm text-gray-600">Administrator, Willow's Garden for the Elderly</p>
+							</div>
+						</div>
+						<div class="flex mb-3">
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star" class="h-5 w-5 text-yellow-500" />
+							<Icon name="ic:baseline-star-half" class="h-5 w-5 text-yellow-500" />
+						</div>
+						<p class="italic">"As our care home grew, we were concerned about losing our personal touch. GeriLife has allowed us to maintain individualized care for each resident while scaling our services. Our staff loves how intuitive it is."</p>
+					</div>
+				</div>
 			</div>
 			
 			<div class="flex flex-wrap justify-center items-center mt-16 gap-8 md:gap-16">

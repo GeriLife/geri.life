@@ -131,6 +131,12 @@ import { Icon } from 'astro-icon/components';
 				const mobileMenuButton = document.getElementById('mobile-menu-button');
 				const closeMenuButton = document.getElementById('close-menu-button');
 				const mobileMenu = document.getElementById('mobile-menu');
+
+				if (!mobileMenuButton || !closeMenuButton || !mobileMenu) {
+					console.error('Mobile menu elements not found');
+					return;
+				}
+
 				const mobileMenuLinks = mobileMenu.querySelectorAll('a');
 				
 				// Open mobile menu

@@ -67,7 +67,7 @@ import Layout from "../layouts/Layout.astro";
                   <span
                     class="text-xl font-bold text-primary"
                     id="resident-display">25</span
-                  > residents
+                  >
                 </div>
               </div>
             </div>
@@ -556,7 +556,8 @@ import Layout from "../layouts/Layout.astro";
 
           // Get resident count
           const residents = parseInt(residentSlider.value);
-          residentDisplay.textContent = residents.toString();
+          residentDisplay.textContent =
+            residents === 1 ? "1 resident" : `${residents} residents`;
 
           // Calculate resident fee
           const monthlyCostPerResident = 5; // €5 per resident per month

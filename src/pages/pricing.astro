@@ -227,34 +227,25 @@ import Layout from "../layouts/Layout.astro";
             <!-- Price Summary -->
             <div class="bg-base-200 p-6 rounded-lg mb-6">
               <h4 class="text-lg font-medium mb-4">Your Total Price</h4>
-              <div class="grid grid-cols-2 gap-2 mb-4">
-                <div>
-                  <p class="text-sm opacity-75">Resident fee:</p>
-                  <p class="text-lg" id="resident-fee">€125</p>
-                </div>
-                <div id="support-fee-container">
-                  <p class="text-sm opacity-75">Support package:</p>
-                  <p class="text-lg" id="support-fee">€0</p>
-                </div>
-              </div>
-              <div
-                class="border-t border-base-300 pt-3 mt-3 flex justify-between items-center"
-              >
-                <div>
-                  <p class="text-sm opacity-75 font-medium" id="billing-label">
-                    Monthly total:
-                  </p>
-                  <p class="text-xs text-success hidden" id="annual-savings">
-                    50% discount applied
-                  </p>
-                </div>
-                <p class="text-2xl font-bold text-primary" id="total-cost">
-                  €125
-                </p>
-              </div>
+              <table class="table-auto w-full text-sm">
+                <tbody>
+                  <tr>
+                    <td class="py-2 text-left">Resident fee</td>
+                    <td class="py-2 text-right" id="resident-fee">€125</td>
+                  </tr>
+                  <tr id="support-fee-row">
+                    <td class="py-2 text-left">Support package</td>
+                    <td class="py-2 text-right" id="support-fee">€0</td>
+                  </tr>
+                  <tr class="border-t border-base-300">
+                    <td class="py-2 text-left font-medium" id="billing-label">Monthly total</td>
+                    <td class="py-2 text-right font-bold text-primary" id="total-cost">€125</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="text-xs text-success mt-2 hidden" id="annual-savings">50% discount applied</p>
               <div class="text-sm opacity-75 italic mt-3">
-                Price includes all features, unlimited users, and updates. No
-                hidden fees.
+                Price includes all features, unlimited users, and updates. No hidden fees.
               </div>
             </div>
 

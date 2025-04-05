@@ -1,451 +1,626 @@
 ---
-import { Icon } from 'astro-icon/components';
-import Layout from '../layouts/Layout.astro';
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <section id="pricing" class="py-16 bg-base-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-serif font-bold mb-4">Equitable Pricing</h2>
-                <p class="text-lg max-w-3xl mx-auto">We believe in fair pricing that scales with your exact needs. Pay only for the residents you serve, and choose support that matches your organization's capabilities.</p>
-            </div>
-            
-            <!-- Enhanced Pricing Calculator with Support Selection -->
-            <div class="max-w-4xl mx-auto mb-16">
-                <div class="card bg-white shadow-xl">
-                    <div class="card-body p-8">
-                        <h3 class="text-2xl font-serif font-bold text-center mb-6">Calculate Your Total Price</h3>
-                        
-                        <!-- Step 1: Number of Residents -->
-                        <div class="mb-8">
-                            <h4 class="text-lg font-medium mb-4">Step 1: How many residents do you serve?</h4>
-                            <div class="mb-6">
-                                <input type="range" id="resident-count" min="1" max="500" value="25" class="range range-primary w-full" />
-                                <div class="flex justify-between text-xs mt-1">
-                                    <span>1</span>
-                                    <span>100</span>
-                                    <span>200</span>
-                                    <span>300</span>
-                                    <span>400</span>
-                                    <span>500</span>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <span class="text-xl font-bold text-primary" id="resident-display">25</span> residents
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Step 2: Choose Support Package -->
-                        <div class="mb-8">
-                            <h4 class="text-lg font-medium mb-4">Step 2: Select your support package</h4>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                <!-- Self-Service Support Option -->
-                                <div class="relative">
-                                    <input type="radio" name="support-package" id="support-self" value="0" class="peer hidden" checked />
-                                    <label for="support-self" class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full">
-                                        <div class="text-center">
-                                            <h5 class="font-medium mb-2">Self-Service</h5>
-                                            <p class="text-xl font-bold mb-2">Free</p>
-                                            <ul class="text-sm text-left space-y-1 mb-3">
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Documentation</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Community forums</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>GitHub issues</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </label>
-                                </div>
-                                
-                                <!-- Standard Support Option -->
-                                <div class="relative">
-                                    <input type="radio" name="support-package" id="support-standard" value="50" class="peer hidden" />
-                                    <label for="support-standard" class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full">
-                                        <div class="text-center">
-                                            <h5 class="font-medium mb-2">Standard</h5>
-                                            <p class="text-xl font-bold mb-2">€50<span class="text-sm font-normal">/mo</span></p>
-                                            <ul class="text-sm text-left space-y-1 mb-3">
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Email support</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>48h response</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Monthly webinars</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </label>
-                                </div>
-                                
-                                <!-- Premium Support Option -->
-                                <div class="relative">
-                                    <input type="radio" name="support-package" id="support-premium" value="150" class="peer hidden" />
-                                    <label for="support-premium" class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full">
-                                        <div class="text-center">
-                                            <h5 class="font-medium mb-2">Premium</h5>
-                                            <p class="text-xl font-bold mb-2">€150<span class="text-sm font-normal">/mo</span></p>
-                                            <ul class="text-sm text-left space-y-1 mb-3">
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>24h response</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Phone support</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Quarterly check-ins</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </label>
-                                </div>
-                                
-                                <!-- Enterprise Support Option -->
-                                <div class="relative">
-                                    <input type="radio" name="support-package" id="support-enterprise" value="300" class="peer hidden" />
-                                    <label for="support-enterprise" class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full">
-                                        <div class="text-center">
-                                            <h5 class="font-medium mb-2">Enterprise</h5>
-                                            <p class="text-xl font-bold mb-2">€300<span class="text-sm font-normal">/mo</span></p>
-                                            <ul class="text-sm text-left space-y-1 mb-3">
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>12h response</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Dedicated contact</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <span class="text-accent mr-1">✓</span>
-                                                    <span>Custom training</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Price Summary -->
-                        <div class="bg-base-200 p-6 rounded-lg mb-6">
-                            <h4 class="text-lg font-medium mb-4">Your Total Price</h4>
-                            <div class="grid grid-cols-2 gap-2 mb-4">
-                                <div>
-                                    <p class="text-sm opacity-75">Resident fee:</p>
-                                    <p class="text-lg" id="resident-fee">€25</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm opacity-75">Platform fee:</p>
-                                    <p class="text-lg" id="platform-fee">€10</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm opacity-75">Support package:</p>
-                                    <p class="text-lg" id="support-fee">€0</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm opacity-75 font-medium">Monthly total:</p>
-                                    <p class="text-2xl font-bold text-primary" id="total-cost">€35</p>
-                                </div>
-                            </div>
-                            <div class="text-sm opacity-75 italic">
-                                Price includes all features, unlimited users, and updates. No hidden fees.
-                            </div>
-                        </div>
-                        
-                        <div class="card-actions justify-center">
-                            <button class="btn btn-primary btn-lg">Get Started</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Pricing Structure Details -->
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-2xl font-serif font-bold text-center mb-8">How Our Equitable Pricing Works</h3>
-                
-                <div class="grid md:grid-cols-2 gap-8 mb-16">
-                    <div class="card bg-base-100 shadow-xl h-full">
-                        <div class="card-body">
-                            <h4 class="card-title text-xl font-serif">Per-Resident Fee</h4>
-                            <p class="mb-4">Each resident costs just €1 per month. This scales linearly as your facility grows or changes, ensuring you only pay for what you use.</p>
-                            <div class="bg-base-200 p-4 rounded-lg">
-                                <p class="font-medium">Examples:</p>
-                                <ul class="space-y-1 mt-2">
-                                    <li>15 residents = €15/month</li>
-                                    <li>47 residents = €47/month</li>
-                                    <li>126 residents = €126/month</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card bg-base-100 shadow-xl h-full">
-                        <div class="card-body">
-                            <h4 class="card-title text-xl font-serif">Platform Fee</h4>
-                            <p class="mb-4">Our platform fee scales with organization size to accommodate increased data needs and system usage.</p>
-                            <div class="bg-base-200 p-4 rounded-lg">
-                                <ul class="space-y-1">
-                                    <li>1-25 residents: €10/month</li>
-                                    <li>26-100 residents: €25/month</li>
-                                    <li>101-250 residents: €50/month</li>
-                                    <li>251-500 residents: €100/month</li>
-                                    <li>500+ residents: Custom pricing</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Support Packages Details -->
-                <div class="mb-16">
-                    <h3 class="text-2xl font-serif font-bold text-center mb-8">Support Package Details</h3>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
-                            <thead>
-                                <tr>
-                                    <th class="text-left">Feature</th>
-                                    <th class="text-center">Self-Service</th>
-                                    <th class="text-center">Standard</th>
-                                    <th class="text-center">Premium</th>
-                                    <th class="text-center">Enterprise</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Documentation & Knowledge Base</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                </tr>
-                                <tr>
-                                    <td>Community Forums</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                </tr>
-                                <tr>
-                                    <td>Email Support</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                    <td class="text-center text-accent">✓</td>
-                                </tr>
-                                <tr>
-                                    <td>Response Time</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">48 hours</td>
-                                    <td class="text-center">24 hours</td>
-                                    <td class="text-center">12 hours</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone Support</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">Limited</td>
-                                    <td class="text-center text-accent">✓</td>
-                                </tr>
-                                <tr>
-                                    <td>Dedicated Contact</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center text-accent">✓</td>
-                                </tr>
-                                <tr>
-                                    <td>Regular Check-ins</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">—</td>
-                                    <td class="text-center">Quarterly</td>
-                                    <td class="text-center">Monthly</td>
-                                </tr>
-                                <tr>
-                                    <td>Training</td>
-                                    <td class="text-center">Self-guided</td>
-                                    <td class="text-center">Webinars</td>
-                                    <td class="text-center">Group sessions</td>
-                                    <td class="text-center">Custom</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td class="text-center">Free</td>
-                                    <td class="text-center">€50/month</td>
-                                    <td class="text-center">€150/month</td>
-                                    <td class="text-center">€300/month</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <!-- Open Source Note -->
-                <div class="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-xl mb-12">
-                    <div class="card-body">
-                        <div class="flex flex-col md:flex-row items-start gap-4">
-                            <div class="md:w-12 flex-shrink-0 flex items-center justify-center">
-                                <Icon name="mdi:github" class="h-12 w-12 text-neutral" />
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-serif font-bold mb-2">Open Source Advantage</h4>
-                                <p>As an open-source platform, GeriLife gives you the flexibility to choose your level of independence. Technical teams can leverage our self-service options and community resources, while organizations needing more guidance can select the appropriate support package.</p>
-                                <p class="mt-2">You can even self-host GeriLife if you prefer to manage your own infrastructure. <a href="https://github.com/GeriLife" class="text-primary hover:underline">Visit our GitHub</a> to learn more.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Custom Solutions -->
-                <div class="card bg-base-200 shadow-xl mb-16">
-                    <div class="card-body">
-                        <div class="flex flex-col md:flex-row justify-between items-center">
-                            <div>
-                                <h4 class="text-xl font-serif font-bold mb-2">Large Organization or Complex Needs?</h4>
-                                <p>For organizations with 500+ residents or specific implementation requirements, we offer tailored solutions.</p>
-                            </div>
-                            <button class="btn btn-primary mt-4 md:mt-0">Contact Sales</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- FAQs -->
-            <div class="max-w-3xl mx-auto mt-16">
-                <h3 class="text-2xl font-serif font-bold text-center mb-8">Frequently Asked Questions</h3>
-                
-                <div class="space-y-4">
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="radio" name="pricing-faq" checked="checked" /> 
-                        <div class="collapse-title text-lg font-medium">
-                            Do I need to purchase a support package?
-                        </div>
-                        <div class="collapse-content"> 
-                            <p>No, support packages are entirely optional. Since GeriLife is open-source, technically proficient organizations can use our self-service resources (documentation, community forums, and GitHub) to manage their implementation. Support packages are available for organizations that want additional assistance or don't have in-house technical resources.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="radio" name="pricing-faq" /> 
-                        <div class="collapse-title text-lg font-medium">
-                            Can I change my support package as our needs change?
-                        </div>
-                        <div class="collapse-content"> 
-                            <p>Absolutely! You can upgrade, downgrade, or cancel your support package at any time. Changes take effect at the start of your next billing cycle. This flexibility allows you to adjust your support level as your team becomes more familiar with the platform or as your organizational needs evolve.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="radio" name="pricing-faq" /> 
-                        <div class="collapse-title text-lg font-medium">
-                            How does billing work if our resident count changes?
-                        </div>
-                        <div class="collapse-content"> 
-                            <p>We understand that resident counts fluctuate naturally. You can update your resident count at any time, and your bill will automatically adjust in the next billing cycle. We don't charge any fees for these adjustments, as we believe your pricing should reflect your actual needs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="collapse collapse-plus bg-base-200">
-                        <input type="radio" name="pricing-faq" /> 
-                        <div class="collapse-title text-lg font-medium">
-                            How exactly does the pricing calculation work?
-                        </div>
-                        <div class="collapse-content"> 
-                            <p>Our pricing has three transparent components that combine for your total monthly cost:</p>
-                            <ol class="mt-2 space-y-2 ml-6 list-decimal">
-                                <li><strong>Per-resident fee:</strong> €1 per resident per month.</li>
-                                <li><strong>Platform fee:</strong> Scales with your organization size (€10-€100), covering infrastructure costs.</li>
-                                <li><strong>Optional support:</strong> Choose from Self-Service (free) to Enterprise (€300/month) based on your needs.</li>
-                            </ol>
-                            <p class="mt-2">For example, a care home with 35 residents selecting Standard support would pay: €35 (residents) + €25 (platform fee) + €50 (support) = €110/month.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- JavaScript for calculator functionality -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const residentSlider = document.getElementById('resident-count') as HTMLInputElement;
-                const residentDisplay = document.getElementById('resident-display');
-                const residentFee = document.getElementById('resident-fee');
-                const platformFee = document.getElementById('platform-fee');
-                const supportFee = document.getElementById('support-fee');
-                const totalCost = document.getElementById('total-cost');
-                const supportOptions = document.querySelectorAll<HTMLInputElement>('input[name="support-package"]');
+  <section id="pricing" class="py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-serif font-bold mb-4">Equitable Pricing</h2>
+        <p class="text-lg max-w-3xl mx-auto">
+          We believe in fair pricing that scales with your exact needs. Pay only
+          for the residents you serve, and choose support that matches your
+          organization's capabilities.
+        </p>
+      </div>
 
-                function updatePricing() {
-                    if (!residentSlider || !residentDisplay || !residentFee || !platformFee || !supportFee || !totalCost) {
-                        console.error('One or more pricing calculator elements not found');
-                        return;
-                    }
-                    
-                    // Get resident count
-                    const residents = parseInt(residentSlider.value);
-                    residentDisplay.textContent = residents.toString();
-                    
-                    // Calculate resident fee
-                    const residentCost = residents * 1; // €1 per resident
-                    
-                    // Calculate platform fee
-                    let platformCost = 10; // Default platform fee
-                    if (residents > 25 && residents <= 100) {
-                        platformCost = 25;
-                    } else if (residents > 100 && residents <= 250) {
-                        platformCost = 50;
-                    } else if (residents > 250 && residents <= 500) {
-                        platformCost = 100;
-                    }
-                    
-                    // Get selected support package
-                    let supportCost = 0;
-                    for (const option of supportOptions) {
-                        if (option.checked) {
-                            supportCost = parseInt(option.value);
-                            break;
-                        }
-                    }
-                    
-                    // Calculate total
-                    const totalPrice = residentCost + platformCost + supportCost;
-                    
-                    // Update display
-                    residentFee.textContent = `€${residentCost}`;
-                    platformFee.textContent = `€${platformCost}`;
-                    supportFee.textContent = `€${supportCost}`;
-                    totalCost.textContent = `€${totalPrice}`;
-                }
-                
-                // Only add event listeners if all elements exist
-                if (residentSlider && supportOptions) {
-                    // Add event listeners
-                    residentSlider.addEventListener('input', updatePricing);
-                    for (const option of supportOptions) {
-                        option.addEventListener('change', updatePricing);
-                    }
-                    
-                    // Initialize with default values
-                    updatePricing();
-                }
-            });
-        </script>
-    </section>
+      <!-- Enhanced Pricing Calculator with Support Selection -->
+      <div class="max-w-4xl mx-auto mb-16">
+        <div class="card bg-white shadow-xl">
+          <div class="card-body p-8">
+            <h3 class="text-2xl font-serif font-bold text-center mb-6">
+              Calculate Your Total Price
+            </h3>
+
+            <!-- Billing Type Selection -->
+            <div class="flex items-center justify-center mb-8">
+              <div class="bg-base-200 p-3 rounded-xl flex items-center">
+                <label class="label cursor-pointer flex items-center gap-3">
+                  <span class="label-text text-base">Monthly</span>
+                  <input
+                    type="checkbox"
+                    id="billing-toggle"
+                    class="toggle toggle-primary toggle-lg"
+                  />
+                  <div class="flex flex-col">
+                    <span class="label-text text-base">Annual Commitment</span>
+                    <span class="text-xs text-success">Save 50%</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 1: Number of Residents -->
+            <div class="mb-8">
+              <h4 class="text-lg font-medium mb-4">
+                Step 1: How many residents do you serve?
+              </h4>
+              <div class="mb-6">
+                <input
+                  type="range"
+                  id="resident-count"
+                  min="1"
+                  max="500"
+                  value="25"
+                  class="range range-primary w-full"
+                />
+                <div class="flex justify-between text-xs mt-1">
+                  <span>1</span>
+                  <span>100</span>
+                  <span>200</span>
+                  <span>300</span>
+                  <span>400</span>
+                  <span>500</span>
+                </div>
+                <div class="text-center mt-3">
+                  <span
+                    class="text-xl font-bold text-primary"
+                    id="resident-display">25</span
+                  > residents
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Choose Support Package -->
+            <div class="mb-8">
+              <h4 class="text-lg font-medium mb-4">
+                Step 2: Select your support package
+              </h4>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Self-Service Support Option -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    name="support-package"
+                    id="support-self"
+                    value="0"
+                    class="peer hidden"
+                    checked
+                  />
+                  <label
+                    for="support-self"
+                    class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full"
+                  >
+                    <div class="text-center">
+                      <h5 class="font-medium mb-2">Self-Service</h5>
+                      <p class="text-xl font-bold mb-2">Free</p>
+                      <ul class="text-sm text-left space-y-1 mb-3">
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Documentation</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Community forums</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>GitHub issues</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </label>
+                </div>
+
+                <!-- Standard Support Option -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    name="support-package"
+                    id="support-standard"
+                    value="50"
+                    class="peer hidden"
+                  />
+                  <label
+                    for="support-standard"
+                    class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full"
+                  >
+                    <div class="text-center">
+                      <h5 class="font-medium mb-2">Standard</h5>
+                      <p class="text-xl font-bold mb-2">
+                        €50<span class="text-sm font-normal">/mo</span>
+                      </p>
+                      <ul class="text-sm text-left space-y-1 mb-3">
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Email support</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>48h response</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Monthly webinars</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </label>
+                </div>
+
+                <!-- Premium Support Option -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    name="support-package"
+                    id="support-premium"
+                    value="150"
+                    class="peer hidden"
+                  />
+                  <label
+                    for="support-premium"
+                    class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full"
+                  >
+                    <div class="text-center">
+                      <h5 class="font-medium mb-2">Premium</h5>
+                      <p class="text-xl font-bold mb-2">
+                        €150<span class="text-sm font-normal">/mo</span>
+                      </p>
+                      <ul class="text-sm text-left space-y-1 mb-3">
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>24h response</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Phone support</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Quarterly check-ins</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </label>
+                </div>
+
+                <!-- Enterprise Support Option -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    name="support-package"
+                    id="support-enterprise"
+                    value="300"
+                    class="peer hidden"
+                  />
+                  <label
+                    for="support-enterprise"
+                    class="block cursor-pointer p-4 border-2 rounded-lg border-base-300 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-base-100 transition-all h-full"
+                  >
+                    <div class="text-center">
+                      <h5 class="font-medium mb-2">Enterprise</h5>
+                      <p class="text-xl font-bold mb-2">
+                        €300<span class="text-sm font-normal">/mo</span>
+                      </p>
+                      <ul class="text-sm text-left space-y-1 mb-3">
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>12h response</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Dedicated contact</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="text-accent mr-1">✓</span>
+                          <span>Custom training</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Summary -->
+            <div class="bg-base-200 p-6 rounded-lg mb-6">
+              <h4 class="text-lg font-medium mb-4">Your Total Price</h4>
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div>
+                  <p class="text-sm opacity-75">Resident fee:</p>
+                  <p class="text-lg" id="resident-fee">€125</p>
+                </div>
+                <div id="support-fee-container">
+                  <p class="text-sm opacity-75">Support package:</p>
+                  <p class="text-lg" id="support-fee">€0</p>
+                </div>
+              </div>
+              <div
+                class="border-t border-base-300 pt-3 mt-3 flex justify-between items-center"
+              >
+                <div>
+                  <p class="text-sm opacity-75 font-medium" id="billing-label">
+                    Monthly total:
+                  </p>
+                  <p class="text-xs text-success hidden" id="annual-savings">
+                    50% discount applied
+                  </p>
+                </div>
+                <p class="text-2xl font-bold text-primary" id="total-cost">
+                  €125
+                </p>
+              </div>
+              <div class="text-sm opacity-75 italic mt-3">
+                Price includes all features, unlimited users, and updates. No
+                hidden fees.
+              </div>
+            </div>
+
+            <div class="card-actions justify-center">
+              <button class="btn btn-primary btn-lg">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Structure Details -->
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-serif font-bold text-center mb-8">
+          How Our Equitable Pricing Works
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="card bg-base-100 shadow-xl h-full">
+            <div class="card-body">
+              <h4 class="card-title text-xl font-serif">
+                Simple Per-Resident Fee
+              </h4>
+              <p class="mb-4">
+                Each resident costs €5 per month. This scales linearly as your
+                facility grows or changes, ensuring you only pay for what you
+                use.
+              </p>
+              <div class="bg-base-200 p-4 rounded-lg">
+                <p class="font-medium">Examples:</p>
+                <ul class="space-y-1 mt-2">
+                  <li>15 residents = €75/month</li>
+                  <li>47 residents = €235/month</li>
+                  <li>126 residents = €630/month</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-100 shadow-xl h-full">
+            <div class="card-body">
+              <h4 class="card-title text-xl font-serif">
+                Annual Commitment Savings
+              </h4>
+              <p class="mb-4">
+                Commit to a full year of service and pay monthly with a 50%
+                discount on the resident fee.
+              </p>
+              <div class="bg-base-200 p-4 rounded-lg">
+                <p class="font-medium">Examples with annual commitment:</p>
+                <ul class="space-y-1 mt-2">
+                  <li>15 residents = €37.50/month (€450/year)</li>
+                  <li>47 residents = €117.50/month (€1,410/year)</li>
+                  <li>126 residents = €315/month (€3,780/year)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support Packages Details -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-serif font-bold text-center mb-8">
+            Support Package Details
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <thead>
+                <tr>
+                  <th class="text-left">Feature</th>
+                  <th class="text-center">Self-Service</th>
+                  <th class="text-center">Standard</th>
+                  <th class="text-center">Premium</th>
+                  <th class="text-center">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Documentation & Knowledge Base</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                </tr>
+                <tr>
+                  <td>Community Forums</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                </tr>
+                <tr>
+                  <td>Email Support</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                  <td class="text-center text-accent">✓</td>
+                </tr>
+                <tr>
+                  <td>Response Time</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">48 hours</td>
+                  <td class="text-center">24 hours</td>
+                  <td class="text-center">12 hours</td>
+                </tr>
+                <tr>
+                  <td>Phone Support</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">Limited</td>
+                  <td class="text-center text-accent">✓</td>
+                </tr>
+                <tr>
+                  <td>Dedicated Contact</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center text-accent">✓</td>
+                </tr>
+                <tr>
+                  <td>Regular Check-ins</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">—</td>
+                  <td class="text-center">Quarterly</td>
+                  <td class="text-center">Monthly</td>
+                </tr>
+                <tr>
+                  <td>Training</td>
+                  <td class="text-center">Self-guided</td>
+                  <td class="text-center">Webinars</td>
+                  <td class="text-center">Group sessions</td>
+                  <td class="text-center">Custom</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td class="text-center">Free</td>
+                  <td class="text-center">€50/month</td>
+                  <td class="text-center">€150/month</td>
+                  <td class="text-center">€300/month</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Open Source Note -->
+        <div
+          class="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-xl mb-12"
+        >
+          <div class="card-body">
+            <div class="flex flex-col md:flex-row items-start gap-4">
+              <div
+                class="md:w-12 flex-shrink-0 flex items-center justify-center"
+              >
+                <Icon name="mdi:github" class="h-12 w-12 text-neutral" />
+              </div>
+              <div>
+                <h4 class="text-xl font-serif font-bold mb-2">
+                  Open Source Advantage
+                </h4>
+                <p>
+                  As an open-source platform, GeriLife gives you the flexibility
+                  to choose your level of independence. Technical teams can
+                  leverage our self-service options and community resources,
+                  while organizations needing more guidance can select the
+                  appropriate support package.
+                </p>
+                <p class="mt-2">
+                  You can even self-host GeriLife if you prefer to manage your
+                  own infrastructure. <a
+                    href="https://github.com/GeriLife"
+                    class="text-primary hover:underline">Visit our GitHub</a
+                  > to learn more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Solutions -->
+        <div class="card bg-base-200 shadow-xl mb-16">
+          <div class="card-body">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <div>
+                <h4 class="text-xl font-serif font-bold mb-2">
+                  Large Organization or Complex Needs?
+                </h4>
+                <p>
+                  For organizations with 500+ residents or specific
+                  implementation requirements, we offer tailored solutions.
+                </p>
+              </div>
+              <button class="btn btn-primary mt-4 md:mt-0">Contact Sales</button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="max-w-3xl mx-auto mt-16">
+        <h3 class="text-2xl font-serif font-bold text-center mb-8">
+          Frequently Asked Questions
+        </h3>
+
+        <div class="space-y-4">
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="pricing-faq" checked="checked" />
+            <div class="collapse-title text-lg font-medium">
+              Do I need to purchase a support package?
+            </div>
+            <div class="collapse-content">
+              <p>
+                No, support packages are entirely optional. Since GeriLife is
+                open-source, technically proficient organizations can use our
+                self-service resources (documentation, community forums, and
+                GitHub) to manage their implementation. Support packages are
+                available for organizations that want additional assistance or
+                don't have in-house technical resources.
+              </p>
+            </div>
+          </div>
+
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="pricing-faq" />
+            <div class="collapse-title text-lg font-medium">
+              Can I change my support package as our needs change?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Absolutely! You can upgrade, downgrade, or cancel your support
+                package at any time. Changes take effect at the start of your
+                next billing cycle. This flexibility allows you to adjust your
+                support level as your team becomes more familiar with the
+                platform or as your organizational needs evolve.
+              </p>
+            </div>
+          </div>
+
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="pricing-faq" />
+            <div class="collapse-title text-lg font-medium">
+              How does billing work if our resident count changes?
+            </div>
+            <div class="collapse-content">
+              <p>
+                We understand that resident counts fluctuate naturally. You can
+                update your resident count at any time, and your bill will
+                automatically adjust in the next billing cycle. We don't charge
+                any fees for these adjustments, as we believe your pricing
+                should reflect your actual needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="pricing-faq" />
+            <div class="collapse-title text-lg font-medium">
+              How exactly does the pricing calculation work?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Our pricing has three transparent components that combine for
+                your total monthly cost:
+              </p>
+              <ol class="mt-2 space-y-2 ml-6 list-decimal">
+                <li>
+                  <strong>Per-resident fee:</strong> €5 per resident per month.
+                </li>
+                <li>
+                  <strong>Optional support:</strong> Choose from Self-Service (free)
+                  to Enterprise (€300/month) based on your needs.
+                </li>
+              </ol>
+              <p class="mt-2">
+                For example, a care home with 35 residents selecting Standard
+                support would pay: €175 (residents) + €50 (support) =
+                €225/month.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for calculator functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const billingToggle = document.getElementById(
+          "billing-toggle"
+        ) as HTMLInputElement;
+        const residentSlider = document.getElementById(
+          "resident-count"
+        ) as HTMLInputElement;
+        const residentDisplay = document.getElementById("resident-display");
+        const residentFee = document.getElementById("resident-fee");
+        const supportFee = document.getElementById("support-fee");
+        const totalCost = document.getElementById("total-cost");
+        const billingLabel = document.getElementById("billing-label");
+        const annualSavings = document.getElementById("annual-savings");
+        const supportOptions = document.querySelectorAll<HTMLInputElement>(
+          'input[name="support-package"]'
+        );
+
+        function updatePricing() {
+          if (
+            !residentSlider ||
+            !residentDisplay ||
+            !residentFee ||
+            !supportFee ||
+            !totalCost
+          ) {
+            console.error("One or more pricing calculator elements not found");
+            return;
+          }
+
+          // Get resident count
+          const residents = parseInt(residentSlider.value);
+          residentDisplay.textContent = residents.toString();
+
+          // Calculate resident fee
+          const monthlyCostPerResident = 5; // €5 per resident per month
+          const isAnnual = billingToggle.checked;
+
+          let residentCost = residents * monthlyCostPerResident;
+          if (isAnnual) {
+            residentCost *= 0.5; // 50% discount for annual commitment
+            if (billingLabel)
+              billingLabel.textContent = "Monthly total (annual commitment):";
+            if (annualSavings) annualSavings.classList.remove("hidden");
+          } else {
+            if (billingLabel) billingLabel.textContent = "Monthly total:";
+            if (annualSavings) annualSavings.classList.add("hidden");
+          }
+
+          // Get selected support package
+          let supportCost = 0;
+          for (const option of supportOptions) {
+            if (option.checked) {
+              supportCost = parseInt(option.value);
+              break;
+            }
+          }
+
+          // Calculate total
+          const totalPrice = residentCost + supportCost;
+
+          // Update display
+          residentFee.textContent = `€${residentCost.toFixed(2)}`;
+          supportFee.textContent = `€${supportCost.toFixed(2)}`;
+          totalCost.textContent = `€${totalPrice.toFixed(2)}`;
+        }
+
+        // Only add event listeners if all elements exist
+        if (residentSlider && supportOptions && billingToggle) {
+          // Add event listeners
+          residentSlider.addEventListener("input", updatePricing);
+          for (const option of supportOptions) {
+            option.addEventListener("change", updatePricing);
+          }
+          billingToggle.addEventListener("change", updatePricing);
+
+          // Initialize with default values
+          updatePricing();
+        }
+      });
+    </script>
+  </section>
 </Layout>

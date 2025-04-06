@@ -23,13 +23,15 @@ import { Icon } from "astro-icon/components";
         life for seniors
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button class="btn btn-accent btn-lg">See How It Works</button>
-        <button
+        <a href="#features" class="btn btn-accent btn-lg">See How It Works</a>
+        <!--TODO: determine how to embed a contact form in this static site -->
+        <a
+          href="mailto:hello@geri.life?subject=I'd%20like%20to%20schedule%20a%20demo"
           class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg"
-          >Schedule Demo</button
+          >Schedule Demo</a
         >
       </div>
-    </div>
+    </div>``
   </header>
 
   <!-- Value Proposition -->
@@ -281,16 +283,20 @@ import { Icon } from "astro-icon/components";
           onboarding support to get you started quickly.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <button class="btn btn-accent btn-lg">Schedule a Demo</button>
+          <a
+            href="mailto:hello@geri.life?subject=I'd%20like%20to%20schedule%20a%20demo"
+            class="btn btn-accent btn-lg">Schedule a Demo</a
+          >
           <a
             href="/pricing"
             class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg"
             >View Pricing Plans</a
           >
         </div>
-        <p class="mt-6 text-sm opacity-90">
+        <!--TODO: enable this when we're ready to take sign-ups -->
+        <!-- <p class="mt-6 text-sm opacity-90">
           No credit card required • Free 30-day trial • Cancel anytime
-        </p>
+        </p> -->
       </div>
     </div>
   </section>

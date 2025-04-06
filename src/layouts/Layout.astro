@@ -1,6 +1,9 @@
 ---
+import { BRAND } from "astro:schema";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
+
+const BASE_URL = import.meta.env.BASE_URL || "";
 ---
 
 <!doctype html>
@@ -11,7 +14,7 @@ import { Icon } from "astro-icon/components";
     <link
       rel="icon"
       type="image/x-icon"
-      href="/src/assets/images/favicon.ico"
+      href={`${BASE_URL}/src/assets/images/favicon.ico`}
     />
     <meta name="generator" content={Astro.generator} />
     <title>GeriLife</title>
@@ -21,9 +24,9 @@ import { Icon } from "astro-icon/components";
     <nav class="container mx-auto py-4 px-4 flex justify-between items-center">
       <!-- Logo and Brand Name -->
       <div class="flex items-center">
-        <a href="/" class="flex items-center">
+        <a href={`${BASE_URL}`} class="flex items-center">
           <img
-            src="/src/assets/images/gerilife.png"
+            src={`${BASE_URL}/src/assets/images/gerilife.png`}
             alt="GeriLife Logo"
             class="h-10 mr-3"
           />
@@ -34,20 +37,25 @@ import { Icon } from "astro-icon/components";
       </div>
       <!-- Desktop Navigation Links -->
       <div class="hidden md:flex space-x-6">
-        <a href="/about#mission" class="hover:text-primary transition-colors"
-          >Our Mission</a
+        <a
+          href={`${BASE_URL}/about#mission`}
+          class="hover:text-primary transition-colors">Our Mission</a
         >
-        <a href="/#features" class="hover:text-primary transition-colors"
-          >Features</a
+        <a
+          href={`${BASE_URL}/#features`}
+          class="hover:text-primary transition-colors">Features</a
         >
-        <a href="/#testimonials" class="hover:text-primary transition-colors"
-          >Testimonials</a
+        <a
+          href={`${BASE_URL}/#testimonials`}
+          class="hover:text-primary transition-colors">Testimonials</a
         >
-        <a href="/pricing" class="hover:text-primary transition-colors"
-          >Pricing</a
+        <a
+          href={`${BASE_URL}/pricing`}
+          class="hover:text-primary transition-colors">Pricing</a
         >
-        <a href="/about" class="hover:text-primary transition-colors"
-          >About Us</a
+        <a
+          href={`${BASE_URL}/about`}
+          class="hover:text-primary transition-colors">About Us</a
         >
       </div>
       <!-- CTA Button (visible on both mobile and desktop) -->
@@ -68,7 +76,7 @@ import { Icon } from "astro-icon/components";
         <div class="flex justify-between items-center mb-6">
           <div class="flex items-center">
             <img
-              src="/src/assets/images/gerilife.png"
+              src={`${BASE_URL}/src/assets/images/gerilife.png`}
               alt="GeriLife Logo"
               class="h-8 mr-2"
             />
@@ -82,18 +90,21 @@ import { Icon } from "astro-icon/components";
         </div>
 
         <div class="flex flex-col space-y-4">
-          <a href="/#mission" class="py-2 hover:text-primary transition-colors"
-            >Our Mission</a
-          >
-          <a href="/#features" class="py-2 hover:text-primary transition-colors"
-            >Features</a
+          <a
+            href={`${BASE_URL}/#mission`}
+            class="py-2 hover:text-primary transition-colors">Our Mission</a
           >
           <a
-            href="/#testimonials"
+            href={`${BASE_URL}/#features`}
+            class="py-2 hover:text-primary transition-colors">Features</a
+          >
+          <a
+            href={`${BASE_URL}/#testimonials`}
             class="py-2 hover:text-primary transition-colors">Testimonials</a
           >
-          <a href="/pricing" class="py-2 hover:text-primary transition-colors"
-            >Pricing</a
+          <a
+            href={`${BASE_URL}/pricing`}
+            class="py-2 hover:text-primary transition-colors">Pricing</a
           >
           <button class="btn btn-primary mt-4 w-full">Request Demo</button>
         </div>
@@ -118,7 +129,7 @@ import { Icon } from "astro-icon/components";
           <div>
             <div class="flex items-center mb-4">
               <img
-                src="/src/assets/images/gerilife.png"
+                src={`${BASE_URL}/src/assets/images/gerilife.png`}
                 alt="GeriLife Logo"
                 class="h-8 mr-2"
               />
@@ -134,18 +145,20 @@ import { Icon } from "astro-icon/components";
             <h3 class="text-lg font-bold mb-4">Platform</h3>
             <ul class="space-y-2">
               <li>
-                <a href="/#features" class="hover:text-accent transition-colors"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a href="/pricing" class="hover:text-accent transition-colors"
-                  >Pricing</a
+                <a
+                  href={`${BASE_URL}/#features`}
+                  class="hover:text-accent transition-colors">Features</a
                 >
               </li>
               <li>
                 <a
-                  href="/#testimonials"
+                  href={`${BASE_URL}/pricing`}
+                  class="hover:text-accent transition-colors">Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href={`${BASE_URL}/#testimonials`}
                   class="hover:text-accent transition-colors">Testimonials</a
                 >
               </li>
@@ -156,8 +169,9 @@ import { Icon } from "astro-icon/components";
             <h3 class="text-lg font-bold mb-4">Company</h3>
             <ul class="space-y-2">
               <li>
-                <a href="/#mission" class="hover:text-accent transition-colors"
-                  >About Us</a
+                <a
+                  href={`${BASE_URL}/about#mission`}
+                  class="hover:text-accent transition-colors">About Us</a
                 >
               </li>
               <li>

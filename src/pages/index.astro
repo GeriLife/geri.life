@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <Layout>
@@ -23,7 +24,9 @@ import { Icon } from "astro-icon/components";
         life for seniors
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#features" class="btn btn-accent btn-lg">See How It Works</a>
+        <a href={`${BASE_URL}#features`} class="btn btn-accent btn-lg"
+          >See How It Works</a
+        >
         <!--TODO: determine how to embed a contact form in this static site -->
         <a
           href="mailto:hello@geri.life?subject=I'd%20like%20to%20schedule%20a%20demo"
@@ -213,7 +216,7 @@ import { Icon } from "astro-icon/components";
                   name="material-symbols:check-circle-outline"
                   class="h-6 w-6 text-accent mt-0.5 mr-2"
                 />
-                <span>Organize detailed notes for each resident</span>
+                <span>Measure activity levels for each resident</span>
               </li>
               <li class="flex items-start">
                 <Icon
@@ -283,7 +286,7 @@ import { Icon } from "astro-icon/components";
             class="btn btn-accent btn-lg">Schedule a Demo</a
           >
           <a
-            href="/pricing"
+            href=`${BASE_URL}/pricing`
             class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg"
             >View Pricing Plans</a
           >

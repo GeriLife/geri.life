@@ -1,0 +1,301 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const BASE_URL = import.meta.env.BASE_URL;
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <header
+    class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative"
+  >
+    <img
+      src="/src/assets/images/caregiver-and-senior.jpg"
+      alt="Caregiver and senior using GeriLife"
+      class="absolute inset-0 w-full h-full object-cover mix-blend-overlay z-0"
+    />
+    <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+    <div class="container mx-auto py-20 px-4 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4">
+        Enhancing Elder Care Through Meaningful Connection
+      </h1>
+      <p class="text-xl md:text-2xl italic mb-8 max-w-2xl mx-auto">
+        Software that helps caregivers track, measure, and improve quality of
+        life for seniors
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href={`${BASE_URL}#features`} class="btn btn-accent btn-lg"
+          >See How It Works</a
+        >
+        <!--TODO: determine how to embed a contact form in this static site -->
+        <a
+          href="mailto:hello@geri.life?subject=I'd%20like%20to%20schedule%20a%20demo"
+          class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg"
+          >Schedule Demo</a
+        >
+      </div>
+    </div>``
+  </header>
+
+  <!-- Value Proposition -->
+  <section class="py-12 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-serif font-bold mb-4">
+            Measure What Matters: Quality of Life
+          </h2>
+          <p class="text-lg mb-6">
+            GeriLife transforms elder care by giving caregivers a simple way to
+            track meaningful activities, measure wellbeing outcomes, and ensure
+            every resident enjoys personalized engagement.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <Icon
+                name="material-symbols:check-circle-outline"
+                class="h-6 w-6 text-accent mt-0.5 mr-2"
+              />
+              <span
+                >Increase resident satisfaction through personalized care</span
+              >
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="material-symbols:check-circle-outline"
+                class="h-6 w-6 text-accent mt-0.5 mr-2"
+              />
+              <span
+                >Save caregivers countless hours on documentation and scheduling</span
+              >
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="material-symbols:check-circle-outline"
+                class="h-6 w-6 text-accent mt-0.5 mr-2"
+              />
+              <span
+                >Provide families with transparent insights into loved ones'
+                care</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/2">
+          <img
+            src="/src/assets/images/home-residents.png"
+            alt="GeriLife Dashboard"
+            class="rounded-lg shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 bg-base-200">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-serif font-bold text-center mb-4">
+        Compassionate Care Made Measurable
+      </h2>
+      <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
+        Our platform transforms daily interactions into meaningful data, helping
+        you deliver exceptional person-centered care.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
+          <figure class="px-6 pt-6">
+            <Icon
+              name="material-symbols:heart-check-outline"
+              class="h-16 w-16 text-primary"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-xl font-serif">Activity Tracking</h3>
+            <p>
+              Easily log meaningful activities for each resident, from social
+              events to one-on-one interactions, creating a complete picture of
+              engagement.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
+          <figure class="px-6 pt-6">
+            <Icon
+              name="material-symbols:chart-data-outline-rounded"
+              class="h-16 w-16 text-primary"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-xl font-serif">Wellbeing Analytics</h3>
+            <p>
+              Transform activity data into actionable insights with our
+              wellbeing dashboard, highlighting trends and areas for improved
+              engagement.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
+          <figure class="px-6 pt-6">
+            <Icon
+              name="material-symbols:family-home-outline"
+              class="h-16 w-16 text-primary"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-xl font-serif">Family Connection</h3>
+            <p>
+              Keep families informed and involved with shareable reports and
+              updates about their loved one's activities and wellbeing progress.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
+          <figure class="px-6 pt-6">
+            <Icon
+              name="material-symbols:monitoring"
+              class="h-16 w-16 text-primary"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-xl font-serif">
+              Holistic Care Oversight
+            </h3>
+            <p>
+              Empower your care team to deliver consistent, personalized
+              attention that nurtures the whole person—creating a community
+              where every resident thrives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalization -->
+  <section class="py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img
+            src="/src/assets/images/playing-dominoes.jpg"
+            alt="Caregiver with senior resident"
+            class="rounded-lg shadow-xl"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-serif font-bold mb-4">
+            We Find That <span class="italic text-primary"
+              >'Personal Touch'</span
+            >
+          </h2>
+          <p class="text-lg mb-6">
+            Through the use of our technology, we bring a genuine touch back
+            into caregiving. For every elderly resident feeling lost in a sea of
+            others in need, we empower caregivers with the ability to know the
+            details of every person in their care.
+          </p>
+
+          <div class="bg-base-200 p-6 rounded-lg shadow-inner">
+            <h3 class="text-xl font-medium mb-3">GeriLife helps you:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:check-circle-outline"
+                  class="h-6 w-6 text-accent mt-0.5 mr-2"
+                />
+                <span>Measure activity levels for each resident</span>
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:check-circle-outline"
+                  class="h-6 w-6 text-accent mt-0.5 mr-2"
+                />
+                <span>Schedule personalized activities that residents love</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:check-circle-outline"
+                  class="h-6 w-6 text-accent mt-0.5 mr-2"
+                />
+                <span>Track individual preferences and special needs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof & Testimonials -->
+  <section
+    id="testimonials"
+    class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10"
+  >
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-serif font-bold text-center mb-12">
+        Trusted by Leading Care Providers
+      </h2>
+
+      <div
+        class="flex flex-wrap justify-center items-center mt-16 gap-8 md:gap-16"
+      >
+        <img
+          src="/src/assets/images/logos/tampere.svg"
+          alt="Tampere logo"
+          class="h-24 opacity-70 hover:opacity-100 transition-opacity"
+        />
+        <img
+          src="/src/assets/images/logos/kontukoti.webp"
+          alt="Kontukoti logo"
+          class="h-24 opacity-70 hover:opacity-100 transition-opacity"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-primary/90 z-0"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <h2 class="text-4xl font-serif font-bold mb-4">
+          Start Improving Elder Care Today
+        </h2>
+        <p class="text-lg mb-8">
+          GeriLife is easy to implement, with no complicated setup. Our
+          cloud-based platform works on any device, and our team provides full
+          onboarding support to get you started quickly.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="mailto:hello@geri.life?subject=I'd%20like%20to%20schedule%20a%20demo"
+            class="btn btn-accent btn-lg">Schedule a Demo</a
+          >
+          <a
+            href=`${BASE_URL}/pricing`
+            class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg"
+            >View Pricing Plans</a
+          >
+        </div>
+        <!--TODO: enable this when we're ready to take sign-ups -->
+        <!-- <p class="mt-6 text-sm opacity-90">
+          No credit card required • Free 30-day trial • Cancel anytime
+        </p> -->
+      </div>
+    </div>
+  </section>
+</Layout>

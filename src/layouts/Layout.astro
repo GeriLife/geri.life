@@ -6,8 +6,22 @@ import { Picture } from "astro:assets";
 
 // Import images
 import gerilifeLogo from "../assets/images/gerilife.png";
+import caregiverAndSenior from "../assets/images/caregiver-and-senior.jpg";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: ImageMetadata;
+}
+
+const {
+  title = "GeriLife | Enhancing Elder Care Through Meaningful Connection",
+  description = "Software that helps caregivers track, measure, and improve quality of life for seniors through meaningful engagement and data-driven insights.",
+  image = caregiverAndSenior,
+} = Astro.props;
 
 const BASE_URL = import.meta.env.BASE_URL || "";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -15,13 +29,37 @@ const BASE_URL = import.meta.env.BASE_URL || "";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={canonicalURL} />
     <link
       rel="icon"
       type="image/x-icon"
       href={`${BASE_URL}/src/assets/images/favicon.ico`}
     />
     <meta name="generator" content={Astro.generator} />
-    <title>GeriLife</title>
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image.src} />
+    <meta property="og:site_name" content="GeriLife" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image.src} />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4a9eff" />
+    <meta name="author" content="GeriLife" />
   </head>
   <body>
     <!-- Navigation -->

@@ -2,6 +2,10 @@
 import { BRAND } from "astro:schema";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+
+// Import images
+import gerilifeLogo from "../assets/images/gerilife.png";
 
 const BASE_URL = import.meta.env.BASE_URL || "";
 ---
@@ -25,10 +29,12 @@ const BASE_URL = import.meta.env.BASE_URL || "";
       <!-- Logo and Brand Name -->
       <div class="flex items-center">
         <a href={`${BASE_URL}`} class="flex items-center">
-          <img
-            src={`${BASE_URL}/src/assets/images/gerilife.png`}
+          <Picture
+            src={gerilifeLogo}
+            formats={["avif", "webp", "png"]}
             alt="GeriLife Logo"
-            class="h-10 mr-3"
+            class="w-auto h-10 object-contain mr-3"
+            widths={[40]}
           />
           <span class="text-2xl font-serif text-primary font-bold"
             >GeriLife</span
@@ -75,10 +81,12 @@ const BASE_URL = import.meta.env.BASE_URL || "";
       <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 p-4">
         <div class="flex justify-between items-center mb-6">
           <div class="flex items-center">
-            <img
-              src={`${BASE_URL}/src/assets/images/gerilife.png`}
+            <Picture
+              src={gerilifeLogo}
+              formats={["avif", "webp", "png"]}
               alt="GeriLife Logo"
-              class="h-8 mr-2"
+              class="w-auto h-8 object-contain mr-2"
+              widths={[32]}
             />
             <span class="text-xl font-serif text-primary font-bold"
               >GeriLife</span
@@ -128,10 +136,12 @@ const BASE_URL = import.meta.env.BASE_URL || "";
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center mb-4">
-              <img
-                src={`${BASE_URL}/src/assets/images/gerilife.png`}
+              <Picture
+                src={gerilifeLogo}
+                formats={["avif", "webp", "png"]}
                 alt="GeriLife Logo"
-                class="h-8 mr-2"
+                class="w-auto h-8 object-contain mr-2"
+                widths={[32]}
               />
               <span class="text-xl font-serif font-bold">GeriLife</span>
             </div>

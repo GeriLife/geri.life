@@ -1,6 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+
+// Import images
+import caregiverAndSenior from "../assets/images/caregiver-and-senior.jpg";
+import homeResidents from "../assets/images/home-residents.png";
+import playingDominoes from "../assets/images/playing-dominoes.jpg";
+import tampereLogo from "../assets/images/logos/tampere.svg";
+import kontukotiLogo from "../assets/images/logos/kontukoti.webp";
+
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
@@ -9,10 +18,13 @@ const BASE_URL = import.meta.env.BASE_URL;
   <header
     class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative"
   >
-    <img
-      src="/src/assets/images/caregiver-and-senior.jpg"
+    <Picture
+      src={caregiverAndSenior}
+      formats={["avif", "webp", "jpg"]}
       alt="Caregiver and senior using GeriLife"
       class="absolute inset-0 w-full h-full object-cover mix-blend-overlay z-0"
+      widths={[400, 800, 1200]}
+      sizes="100vw"
     />
     <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     <div class="container mx-auto py-20 px-4 text-center relative z-10">
@@ -34,7 +46,7 @@ const BASE_URL = import.meta.env.BASE_URL;
           >Schedule Demo</a
         >
       </div>
-    </div>``
+    </div>
   </header>
 
   <!-- Value Proposition -->
@@ -82,10 +94,13 @@ const BASE_URL = import.meta.env.BASE_URL;
           </ul>
         </div>
         <div class="md:w-1/2">
-          <img
-            src="/src/assets/images/home-residents.png"
+          <Picture
+            src={homeResidents}
+            formats={["avif", "webp", "png"]}
             alt="GeriLife Dashboard"
             class="rounded-lg shadow-xl"
+            widths={[400, 800]}
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
       </div>
@@ -189,10 +204,13 @@ const BASE_URL = import.meta.env.BASE_URL;
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-          <img
-            src="/src/assets/images/playing-dominoes.jpg"
+          <Picture
+            src={playingDominoes}
+            formats={["avif", "webp", "jpg"]}
             alt="Caregiver with senior resident"
             class="rounded-lg shadow-xl"
+            widths={[400, 800]}
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
         <div class="md:w-1/2">
@@ -254,14 +272,16 @@ const BASE_URL = import.meta.env.BASE_URL;
         class="flex flex-wrap justify-center items-center mt-16 gap-8 md:gap-16"
       >
         <img
-          src="/src/assets/images/logos/tampere.svg"
+          src={tampereLogo.src}
           alt="Tampere logo"
-          class="h-24 opacity-70 hover:opacity-100 transition-opacity"
+          class="w-auto h-24 object-contain opacity-70 hover:opacity-100 transition-opacity"
         />
-        <img
-          src="/src/assets/images/logos/kontukoti.webp"
+        <Picture
+          src={kontukotiLogo}
+          formats={["avif", "webp"]}
           alt="Kontukoti logo"
-          class="h-24 opacity-70 hover:opacity-100 transition-opacity"
+          class="w-auto h-24 object-contain opacity-70 hover:opacity-100 transition-opacity"
+          widths={[96]}
         />
       </div>
     </div>

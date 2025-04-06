@@ -1,184 +1,373 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components'
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+
+// Import staff images
+import marjoRiittaImage from "../assets/images/staff/Marjo-Riitta.Rikala.jpg";
+import brylieImage from "../assets/images/staff/BrylieChristopherOxley.jpg";
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <Layout title="About GeriLife | Enhancing Elder Care">
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative">
-        <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
-        <div class="container mx-auto py-16 px-4 text-center relative z-10">
-            <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4">About GeriLife</h1>
-            <p class="text-xl md:text-2xl italic max-w-3xl mx-auto">A Public Benefit Corporation committed to improving elder care through technology and compassion</p>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <header
+    class="bg-gradient-to-r from-primary/90 to-secondary/90 text-white relative"
+  >
+    <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+    <div class="container mx-auto py-16 px-4 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4">
+        About GeriLife
+      </h1>
+      <p class="text-xl md:text-2xl italic max-w-3xl mx-auto">
+        A Public Benefit Corporation committed to improving elder care through
+        technology and compassion
+      </p>
+    </div>
+  </header>
 
-    <!-- Mission and Vision Section -->
-    <section class="py-16 bg-base-100">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="mb-16">
-                    <h2 class="text-4xl font-serif font-bold mb-8 text-center">Our Purpose</h2>
-                    
-                    <div class="card bg-base-100 shadow-xl mb-8">
-                        <div class="card-body">
-                            <h3 class="card-title text-2xl font-serif">Mission</h3>
-                            <p class="text-lg">The seasoned residents of our society deserve the chance to keep that pep in their step. We want to make that possible through personal interactions, organized activities, and customized routines that fit the life they want to lead.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="card bg-base-100 shadow-xl mb-8">
-                        <div class="card-body">
-                            <h3 class="card-title text-2xl font-serif">Vision</h3>
-                            <p class="text-lg">We hope that GeriLife can provide caregivers with the tools they need to create an exciting life for their residents through compassionate and genuine care. No more resigning to a life of repetitive routines—we want people to continue living a full life while maintaining proper care for their health needs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-lg">
-                        <div class="card-body">
-                            <h3 class="card-title text-2xl font-serif">Public Benefit Corporation</h3>
-                            <p class="text-lg">At GeriLife, positive social impact comes first. We are committed to improving elder care while building a sustainable business that supports our mission. Our legal structure as a Public Benefit Corporation ensures that we balance purpose and profit, maintaining accountability to our social mission in everything we do.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Mission and Vision Section -->
+  <section class="py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-4xl font-serif font-bold mb-8 text-center">
+            Our Purpose
+          </h2>
 
-    <!-- Values Section -->
-    <section class="py-16 bg-base-200">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-serif font-bold mb-12 text-center">Our Values</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full">
-                    <div class="card-body">
-                        <div class="flex justify-center mb-6">
-                            <Icon name="material-symbols:balance" class="h-16 w-16 text-primary" />
-                        </div>
-                        <h3 class="card-title text-2xl font-serif text-center mb-4 justify-center">Equity</h3>
-                        <p>We treat everyone equally but not the same. We recognize that many differences are meaningful, such as personal preferences and abilities, and tailor our approach to honor individual needs and dignity.</p>
-                    </div>
-                </div>
-                
-                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full">
-                    <div class="card-body">
-                        <div class="flex justify-center mb-6">
-                            <Icon name="material-symbols:visibility-outline" class="h-16 w-16 text-primary" />
-                        </div>
-                        <h3 class="card-title text-2xl font-serif text-center mb-4 justify-center">Transparency</h3>
-                        <p>We believe in openness, visibility, and clarity in communication. This promotes trust among our team, our customers, and the residents they serve. Our commitment to transparency extends to our open source code on <a href="https://github.com/GeriLife" class="text-primary hover:underline" target="_blank">GitHub</a>.</p>
-                    </div>
-                </div>
-                
-                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full">
-                    <div class="card-body">
-                        <div class="flex justify-center mb-6">
-                            <Icon name="material-symbols:stylus" class="h-16 w-16 text-primary" />
-                        </div>
-                        <h3 class="card-title text-2xl font-serif text-center mb-4 justify-center">Simplicity</h3>
-                        <p>We strive to keep our products and operations simple and usable. In a complex healthcare environment, we believe that technology should reduce cognitive burden, not add to it. Our focus is on intuitive design that allows caregivers to focus on what matters most: their residents.</p>
-                    </div>
-                </div>
+          <div class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-serif">Mission</h3>
+              <p class="text-lg">
+                The seasoned residents of our society deserve the chance to keep
+                that pep in their step. We want to make that possible through
+                personal interactions, organized activities, and customized
+                routines that fit the life they want to lead.
+              </p>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Team Section -->
-    <section class="py-16 bg-base-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-serif font-bold mb-4 text-center">Our Team</h2>
-            <p class="text-lg text-center mb-12 max-w-3xl mx-auto">GeriLife brings together expertise in elder care, software development, and social impact to create meaningful solutions that make a difference.</p>
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <!-- Marjo-Riitta Rikala -->
-                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-                    <figure class="px-6 pt-6">
-                        <img src="/src/assets/images/staff/Marjo-Riitta.Rikala.jpg" alt="Marjo-Riitta Rikala" class="rounded-lg h-64 w-64 object-cover mx-auto shadow-md" />
-                    </figure>
-                    <div class="card-body">
-                        <h3 class="card-title text-2xl font-serif justify-center text-center">Marjo-Riitta Rikala</h3>
-                        <p class="text-center text-primary font-medium">Elder Care Domain Expert</p>
-                        <div class="divider"></div>
-                        <p class="mb-4">(RN, MHSc) Marjo-Riitta works in a leadership position in elder care at Pirkanmaan hyvinvointialue. Previously with the City of Tampere's Elderly Care Services, she coordinates the development of wellbeing software for the elderly alongside her primary role.</p>
-                        <p class="mb-4">Her extensive background includes working as a project manager for wellbeing services, as ward manager in a surgical ward, and as a researcher at the University of Tampere.</p>
-                        
-                        <div class="bg-base-200 p-4 rounded-lg mb-4">
-                            <h4 class="font-medium mb-2">Research and Publications</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <Icon name="material-symbols:article" class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
-                                    <span>Published in the 2008 International Journal of Nursing Studies: "Further testing of a family nursing instrument (FAFHES)"</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <Icon name="material-symbols:mic" class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
-                                    <span>Presented at the International Long-Term Care Conference</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="flex justify-center space-x-4 mt-4">
-                            <a href="https://www.linkedin.com/in/marjoriittarikala/" class="btn btn-circle btn-sm" target="_blank" aria-label="LinkedIn">
-                                <Icon name="mdi:linkedin" class="h-5 w-5" />
-                            </a>
-                            <a href="https://www.academia.edu/57341935/Further_testing_of_a_family_nursing_instrument_FAFHES_" class="btn btn-circle btn-sm" target="_blank" aria-label="Academia">
-                                <Icon name="mdi:school" class="h-5 w-5" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Brylie Christopher Oxley -->
-                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-                    <figure class="px-6 pt-6">
-                        <img src="/src/assets/images/staff/BrylieChristopherOxley.jpg" alt="Brylie Christopher Oxley" class="rounded-lg h-64 w-64 object-cover mx-auto shadow-md" />
-                    </figure>
-                    <div class="card-body">
-                        <h3 class="card-title text-2xl font-serif justify-center text-center">Brylie Christopher Oxley</h3>
-                        <p class="text-center text-primary font-medium">Open Source Developer</p>
-                        <div class="divider"></div>
-                        <p class="mb-4">Brylie is a long-term open source contributor and advocate for open culture. His passion for creating accessible, impactful software drives GeriLife's technical development and commitment to transparency.</p>
-                        <p class="mb-4">With extensive experience in creating human-centered technology solutions, Brylie ensures that GeriLife's platform remains simple, intuitive, and effective for all users, regardless of their technical background.</p>
-                        
-                        <div class="bg-base-200 p-4 rounded-lg mb-4">
-                            <h4 class="font-medium mb-2">Open Source Contributions</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <Icon name="mdi:github" class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
-                                    <span>Lead maintainer of GeriLife open source repositories</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <Icon name="material-symbols:code" class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
-                                    <span>Contributor to multiple humanitarian and social impact technology projects</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="flex justify-center space-x-4 mt-4">
-                            <a href="https://github.com/brylie" class="btn btn-circle btn-sm" target="_blank" aria-label="GitHub">
-                                <Icon name="mdi:github" class="h-5 w-5" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/brylie/" class="btn btn-circle btn-sm" target="_blank" aria-label="LinkedIn">
-                                <Icon name="mdi:linkedin" class="h-5 w-5" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <div class="card bg-base-100 shadow-xl mb-8">
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-serif">Vision</h3>
+              <p class="text-lg">
+                We hope that GeriLife can provide caregivers with the tools they
+                need to create an exciting life for their residents through
+                compassionate and genuine care. No more resigning to a life of
+                repetitive routines—we want people to continue living a full
+                life while maintaining proper care for their health needs.
+              </p>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Open Source Section -->
-    <section class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="flex justify-center mb-8">
-                    <Icon name="mdi:github" class="h-20 w-20" />
-                </div>
-                <h2 class="text-4xl font-serif font-bold mb-6">Open Source Commitment</h2>
-                <p class="text-lg mb-8">At GeriLife, we believe that transparency extends to our technology. Our core platform is open source, allowing for community contributions, security audits, and shared innovation in elder care technology.</p>
-                <a href="https://github.com/GeriLife" class="btn btn-primary btn-lg" target="_blank">View Our GitHub</a>
+          <div
+            class="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-lg"
+          >
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-serif">
+                Public Benefit Corporation
+              </h3>
+              <p class="text-lg">
+                At GeriLife, positive social impact comes first. We are
+                committed to improving elder care while building a sustainable
+                business that supports our mission. Our legal structure as a
+                Public Benefit Corporation ensures that we balance purpose and
+                profit, maintaining accountability to our social mission in
+                everything we do.
+              </p>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-base-200">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-serif font-bold mb-12 text-center">
+        Our Values
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full"
+        >
+          <div class="card-body">
+            <div class="flex justify-center mb-6">
+              <Icon
+                name="material-symbols:balance"
+                class="h-16 w-16 text-primary"
+              />
+            </div>
+            <h3
+              class="card-title text-2xl font-serif text-center mb-4 justify-center"
+            >
+              Equity
+            </h3>
+            <p>
+              We treat everyone equally but not the same. We recognize that many
+              differences are meaningful, such as personal preferences and
+              abilities, and tailor our approach to honor individual needs and
+              dignity.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full"
+        >
+          <div class="card-body">
+            <div class="flex justify-center mb-6">
+              <Icon
+                name="material-symbols:visibility-outline"
+                class="h-16 w-16 text-primary"
+              />
+            </div>
+            <h3
+              class="card-title text-2xl font-serif text-center mb-4 justify-center"
+            >
+              Transparency
+            </h3>
+            <p>
+              We believe in openness, visibility, and clarity in communication.
+              This promotes trust among our team, our customers, and the
+              residents they serve. Our commitment to transparency extends to
+              our open source code on <a
+                href="https://github.com/GeriLife"
+                class="text-primary hover:underline"
+                target="_blank">GitHub</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all h-full"
+        >
+          <div class="card-body">
+            <div class="flex justify-center mb-6">
+              <Icon
+                name="material-symbols:stylus"
+                class="h-16 w-16 text-primary"
+              />
+            </div>
+            <h3
+              class="card-title text-2xl font-serif text-center mb-4 justify-center"
+            >
+              Simplicity
+            </h3>
+            <p>
+              We strive to keep our products and operations simple and usable.
+              In a complex healthcare environment, we believe that technology
+              should reduce cognitive burden, not add to it. Our focus is on
+              intuitive design that allows caregivers to focus on what matters
+              most: their residents.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-serif font-bold mb-4 text-center">Our Team</h2>
+      <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
+        GeriLife brings together expertise in elder care, software development,
+        and social impact to create meaningful solutions that make a difference.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <!-- Marjo-Riitta Rikala -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+          <figure class="px-6 pt-6">
+            <Picture
+              src={marjoRiittaImage}
+              formats={["avif", "webp", "jpg"]}
+              alt="Marjo-Riitta Rikala"
+              class="w-64 h-64 object-cover rounded-lg mx-auto shadow-md"
+              widths={[256, 512]}
+              sizes="256px"
+            />
+          </figure>
+          <div class="card-body">
+            <h3
+              class="card-title text-2xl font-serif justify-center text-center"
+            >
+              Marjo-Riitta Rikala
+            </h3>
+            <p class="text-center text-primary font-medium">
+              Elder Care Domain Expert
+            </p>
+            <div class="divider"></div>
+            <p class="mb-4">
+              (RN, MHSc) Marjo-Riitta works in a leadership position in elder
+              care at Pirkanmaan hyvinvointialue. Previously with the City of
+              Tampere's Elderly Care Services, she coordinates the development
+              of wellbeing software for the elderly alongside her primary role.
+            </p>
+            <p class="mb-4">
+              Her extensive background includes working as a project manager for
+              wellbeing services, as ward manager in a surgical ward, and as a
+              researcher at the University of Tampere.
+            </p>
+
+            <div class="bg-base-200 p-4 rounded-lg mb-4">
+              <h4 class="font-medium mb-2">Research and Publications</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <Icon
+                    name="material-symbols:article"
+                    class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0"
+                  />
+                  <span
+                    >Published in the 2008 International Journal of Nursing
+                    Studies: "Further testing of a family nursing instrument
+                    (FAFHES)"</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <Icon
+                    name="material-symbols:mic"
+                    class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0"
+                  />
+                  <span
+                    >Presented at the International Long-Term Care Conference</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex justify-center space-x-4 mt-4">
+              <a
+                href="https://www.linkedin.com/in/marjoriittarikala/"
+                class="btn btn-circle btn-sm"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <Icon name="mdi:linkedin" class="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.academia.edu/57341935/Further_testing_of_a_family_nursing_instrument_FAFHES_"
+                class="btn btn-circle btn-sm"
+                target="_blank"
+                aria-label="Academia"
+              >
+                <Icon name="mdi:school" class="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brylie Christopher Oxley -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+          <figure class="px-6 pt-6">
+            <Picture
+              src={brylieImage}
+              formats={["avif", "webp", "jpg"]}
+              alt="Brylie Christopher Oxley"
+              class="w-64 h-64 object-cover rounded-lg mx-auto shadow-md"
+              widths={[256, 512]}
+              sizes="256px"
+            />
+          </figure>
+          <div class="card-body">
+            <h3
+              class="card-title text-2xl font-serif justify-center text-center"
+            >
+              Brylie Christopher Oxley
+            </h3>
+            <p class="text-center text-primary font-medium">
+              Open Source Developer
+            </p>
+            <div class="divider"></div>
+            <p class="mb-4">
+              Brylie is a long-term open source contributor and advocate for
+              open culture. His passion for creating accessible, impactful
+              software drives GeriLife's technical development and commitment to
+              transparency.
+            </p>
+            <p class="mb-4">
+              With extensive experience in creating human-centered technology
+              solutions, Brylie ensures that GeriLife's platform remains simple,
+              intuitive, and effective for all users, regardless of their
+              technical background.
+            </p>
+
+            <div class="bg-base-200 p-4 rounded-lg mb-4">
+              <h4 class="font-medium mb-2">Open Source Contributions</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <Icon
+                    name="mdi:github"
+                    class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0"
+                  />
+                  <span
+                    >Lead maintainer of GeriLife open source repositories</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <Icon
+                    name="material-symbols:code"
+                    class="h-5 w-5 mt-0.5 mr-2 flex-shrink-0"
+                  />
+                  <span
+                    >Contributor to multiple humanitarian and social impact
+                    technology projects</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex justify-center space-x-4 mt-4">
+              <a
+                href="https://github.com/brylie"
+                class="btn btn-circle btn-sm"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <Icon name="mdi:github" class="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/brylie/"
+                class="btn btn-circle btn-sm"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <Icon name="mdi:linkedin" class="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source Section -->
+  <section class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex justify-center mb-8">
+          <Icon name="mdi:github" class="h-20 w-20" />
+        </div>
+        <h2 class="text-4xl font-serif font-bold mb-6">
+          Open Source Commitment
+        </h2>
+        <p class="text-lg mb-8">
+          At GeriLife, we believe that transparency extends to our technology.
+          Our core platform is open source, allowing for community
+          contributions, security audits, and shared innovation in elder care
+          technology.
+        </p>
+        <a
+          href="https://github.com/GeriLife"
+          class="btn btn-primary btn-lg"
+          target="_blank">View Our GitHub</a
+        >
+      </div>
+    </div>
+  </section>
 </Layout>
